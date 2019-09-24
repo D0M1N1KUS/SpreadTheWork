@@ -21,5 +21,22 @@ namespace Server.ObjectSender
             using (var memorySteam = new MemoryStream(data.data))
                 return (new BinaryFormatter()).Deserialize(memorySteam);
         }
+        
+        public static byte[] SerializeToBytes(object serializableObject)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                (new BinaryFormatter()).Serialize(memoryStream, serializableObject);
+                return memoryStream.ToArray();
+            }
+        }
+
+        public static object Deserialize(byte[] data)
+        {
+            using (var memorySteam = new MemoryStream(data))
+                return (new BinaryFormatter()).Deserialize(memorySteam);
+        }
+        
+        
     }
 }

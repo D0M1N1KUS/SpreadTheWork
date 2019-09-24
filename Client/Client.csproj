@@ -50,7 +50,8 @@
     <ItemGroup>
         <Compile Include="ClientBase\ClientOnSockets.cs" />
         <Compile Include="ClientBase\ClientTest1.cs" />
-        <Compile Include="Program.cs" />
+        <Compile Include="ClientBase\Connector.cs" />
+        <Compile Include="Client.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>

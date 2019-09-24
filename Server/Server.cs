@@ -3,9 +3,9 @@ using NLog;
 
 namespace Server
 {
-    internal class Program
+    internal class Server
     {
-        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+        public static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         
         public static void Main(string[] args)
         {

@@ -21,6 +21,7 @@ namespace Server.ServerBase
             _listen = true;
             _listenerThread = new Thread(listenForClients);
             _listenerThread.Start();
+            Logger.Info($"Listening for clients on port {port}.");
         }
 
         public void AddConnectionCallback(ClientConnectedCallbackEvent callbackEvent)
