@@ -32,14 +32,8 @@ namespace Client.ClientBase
                 Console.Write("&gt; ");
                 sData = Console.ReadLine();
  
-                // write data and make sure to flush, or the buffer will continue to 
-                // grow, and your data might not be sent when you want it, and will
-                // only be sent once the buffer is filled.
                 _sWriter.WriteLine(sData);
                 _sWriter.Flush();
- 
-                // if you want to receive anything
-                // String sDataIncomming = _sReader.ReadLine();
             }
         }
     }
