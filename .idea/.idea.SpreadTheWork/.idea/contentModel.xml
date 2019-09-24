@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Dominikus\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Dominikus\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_SpreadTheWork.-1730928527.00" t="ExcludeRecursive" />
+    <e p="D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork" t="IncludeFlat">
+      <e p="Client" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Client.csproj" t="IncludeRecursive" />
+        <e p="ClientBase" t="Include">
+          <e p="ClientOnSockets.cs" t="Include" />
+          <e p="ClientTest1.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Core" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Class1.cs" t="Include" />
+        <e p="Core.csproj" t="IncludeRecursive" />
+        <e p="Interfaces" t="Include">
+          <e p="ISerializableData.cs" t="Include" />
+          <e p="ISpreadable.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="ObjectSender" t="Include">
+          <e p="ObjectSerializer.cs" t="Include" />
+          <e p="SerializedObject.cs" t="Include" />
+        </e>
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Server" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Interfaces" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="ObjectSender" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Server.csproj" t="IncludeRecursive" />
+        <e p="ServerBase" t="Include">
+          <e p="ServerOnSockets.cs" t="Include" />
+          <e p="ServerTest1.cs" t="Include" />
+        </e>
+      </e>
+      <e p="SpreadTheWork.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>

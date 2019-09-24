@@ -1,0 +1,6 @@
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Server\bin\Debug\Server.exe
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Server\bin\Debug\Server.pdb
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Server\obj\Debug\Server.csprojAssemblyReference.cache
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Server\obj\Debug\Server.exe
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Server\obj\Debug\Server.pdb
