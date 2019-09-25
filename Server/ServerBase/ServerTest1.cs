@@ -14,7 +14,7 @@ namespace Server.ServerBase
         private TcpListener _listener;
         private bool _isRunning;
 
-        private List<TcpClient> _clients;
+        //private List<TcpClient> _clients;
 
         public ServerTest1(int port)
         {

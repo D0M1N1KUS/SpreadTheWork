@@ -42,12 +42,14 @@ namespace Client.ClientBase
             if(!connectionResponse.ConnectionAccepted)
                 throw new Exception($"Server refused connection!");
 
-            Logger.Debig($"Server accepted connection on port {connectionResponse.port}. Id of client is {connectionResponse.clientID}.");
+            Logger.Debug($"Server accepted connection on port {connectionResponse.port}. Id of client is {connectionResponse.clientID}.");
             clientId = connectionResponse.clientID;
+
+            Logger.Debug($"Connecting to server on port {connectionResponse.port}...");
             var socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            socket.Connect(ipAddress, connectionResponse.port);
+            socket.Connect(IPAddress.Parse(ipAddress), connectionResponse.port);
             
-            var serverNetworkStream = new NetworkStream(socket);
+            var serverNetworkStream = new NetworkStream(socket, true);
 
             var responseForServer = ObjectSerializer.SerializeToBytes(connectionResponse);            
             Logger.Debug("Sending connection response to server.");

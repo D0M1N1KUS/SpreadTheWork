@@ -4,3 +4,8 @@ D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\obj\Debug
 D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
 D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\obj\Debug\Client.exe
 D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\obj\Debug\Client.pdb
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\bin\Debug\Core.dll
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\bin\Debug\NLog.dll
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\bin\Debug\Core.pdb
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\bin\Debug\NLog.xml
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\obj\Debug\Client.csproj.CopyComplete

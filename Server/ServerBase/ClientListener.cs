@@ -24,6 +24,12 @@ namespace Server.ServerBase
             Logger.Info($"Listening for clients on port {port}.");
         }
 
+        ~ClientListener()
+        {
+            if(_listenerThread.IsAlive)
+                _listenerThread.Abort();
+        }
+
         public void AddConnectionCallback(ClientConnectedCallbackEvent callbackEvent)
         {
             Logger.Debug($"{callbackEvent.Method.Name} subscribed to client connection event");
@@ -65,6 +71,7 @@ namespace Server.ServerBase
         {
             while (_listen)
             {
+                _listener.Start();
                 var tcpClient = _listener.AcceptTcpClient();
                 var ipAddress = ((IPEndPoint) tcpClient.Client.RemoteEndPoint).Address;
                 Logger.Debug($"Connection attempt from [{ipAddress}]");

@@ -1,0 +1,8 @@
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\bin\RunDebug\Client.exe
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\bin\RunDebug\Core.dll
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\bin\RunDebug\NLog.dll
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\bin\RunDebug\NLog.xml
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\obj\RunDebug\Client.csprojAssemblyReference.cache
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\obj\RunDebug\Client.csproj.CoreCompileInputs.cache
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\obj\RunDebug\Client.csproj.CopyComplete
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\obj\RunDebug\Client.exe

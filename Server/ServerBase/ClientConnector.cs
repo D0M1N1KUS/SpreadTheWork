@@ -27,11 +27,12 @@ namespace Server.ServerBase
         
         private ConcurrentDictionary<int, NetworkStream> connectedClients;
 
-        private object clientConnectorLock;
+        private object clientConnectorLock = new object();
 
         public ClientConnector()
         {
             _objectSerializer = new ObjectSerializer();
+            connectedClients = new ConcurrentDictionary<int, NetworkStream>();
         }
         
         public void ConnectClient(TcpClient client)
@@ -45,14 +46,14 @@ namespace Server.ServerBase
             }
             catch (Exception e)
             {
-                Logger.Error($"Failed to connect to client with ip {((IPEndPoint) client.Client.RemoteEndPoint).Address}.");
+                Logger.Error($"Failed to connect to client with ip {((IPEndPoint) client.Client.RemoteEndPoint).Address}. Reason\n{e.Message}");
             }
         }
 
         private void connect(TcpClient client)
         {
-            var clientId = sendConnectionResponseToClient(client, out var clientSocket);
-            var currentClient = waitForClientResponse(clientSocket, clientId, out var buffer);
+            var clientId = sendConnectionResponseToClient(client, out var clientStream);
+            waitForClientResponse(clientStream, clientId, out var buffer);
 
             var response = ObjectSerializer.Deserialize(buffer);
             if (!(response is ConnectionResponse))
@@ -77,22 +78,22 @@ namespace Server.ServerBase
             do
             {
                 Logger.Debug($"Trying to add client with id {clientId}.");
-            } while (!connectedClients.TryAdd(clientId, currentClient));
+            } while (!connectedClients.TryAdd(clientId, clientStream));
+            Logger.Info($"Client with id {clientId} added.");
         }
 
-        private static NetworkStream waitForClientResponse(Socket clientSocket, int clientId, out byte[] buffer)
+        private static void waitForClientResponse(NetworkStream clientStream, int clientId, out byte[] buffer)
         {
-            var currentClient = new NetworkStream(clientSocket, true) {ReadTimeout = 10000};
+            //var currentClient = new NetworkStream(clientStream, true) {ReadTimeout = 10000};
 
             Logger.Debug($"Accept message sent to client {clientId}. Waiting for response...");
             buffer = new byte[1024];
-            var bytesRead = currentClient.Read(buffer, 0, buffer.Length);
-            return currentClient;
+            var bytesRead = clientStream.Read(buffer, 0, buffer.Length);
         }
 
-        private int sendConnectionResponseToClient(TcpClient client, out Socket clientSocket)
+        private int sendConnectionResponseToClient(TcpClient client, out NetworkStream clientStream)
         {
-            var port = getNextFreePort();
+            var port = currentPort++;//getNextFreePort();
 
             var currentNetworkStream = client.GetStream();
             var clientId = currentClientId++;
@@ -101,9 +102,13 @@ namespace Server.ServerBase
             Logger.Debug($"Sending accept response to client {clientId}...");
             currentNetworkStream.Write(connectionMessage, 0, connectionMessage.Length);
 
-            clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            Logger.Debug("Creating client listener...");
             var clientIp = ((IPEndPoint) client.Client.RemoteEndPoint).Address;
-            clientSocket.Connect(clientIp, port);
+            var clientListener = new TcpListener(clientIp, port);
+            clientListener.Start();
+            Logger.Debug($"Wating for client on port {port}...");
+            clientStream = clientListener.AcceptTcpClient().GetStream();//clientSocket.Connect(clientIp, port);
+            
             return clientId;
         }
 

@@ -1,0 +1,9 @@
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Core\bin\Debug\Core.dll
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Core\bin\Debug\Core.pdb
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Core\bin\Debug\NLog.dll
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Core\bin\Debug\NLog.xml
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Core\obj\Debug\Core.csprojAssemblyReference.cache
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Core\obj\Debug\Core.csproj.CopyComplete
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Core\obj\Debug\Core.dll
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Core\obj\Debug\Core.pdb
