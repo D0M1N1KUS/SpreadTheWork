@@ -2,7 +2,7 @@ using System;
 
 namespace Server.Interfaces
 {
-    public interface ISerializableData
+    public interface ISerializedData
     {
         byte[] data { get; set; }
     }

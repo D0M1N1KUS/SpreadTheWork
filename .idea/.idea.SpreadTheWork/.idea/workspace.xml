@@ -2,27 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41354fc8-0f3b-403b-a439-418045e8a667" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpreadTheWork/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpreadTheWork/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Client.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Client.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/ClientBase/Connector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/ClientBase/Connector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/bin/Debug/Client.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Client/bin/Debug/Client.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/bin/Debug/Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Client/bin/Debug/Client.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/Client.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/Client.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/Client.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/Client.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/Client.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/Client.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/Client.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/Client.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/Client.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/DataClasses/EncapsulatedList.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/DataClasses/PingStruct.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Interfaces/IMessage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/ObjectSendingTest/ObjectSendingTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/ServerBase/ClientCommunication.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Core.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Interfaces/ISerializableData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Interfaces/ISerializedData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/ObjectSender/ObjectSerializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/ObjectSender/ObjectSerializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/ObjectSender/SerializedObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/ObjectSender/SerializedObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/ObjectSender/ObjectSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/ObjectSender/ObjectSender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/ServerBase/ClientConnector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/ServerBase/ClientConnector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/ServerBase/ClientListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/ServerBase/ClientListener.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/ServerBase/ServerTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/ServerBase/ServerTest1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/bin/Debug/Server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Server/bin/Debug/Server.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/bin/Debug/Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Server/bin/Debug/Server.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/obj/Debug/Server.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Debug/Server.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/obj/Debug/Server.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Debug/Server.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/obj/Debug/Server.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Debug/Server.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/obj/Debug/Server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Debug/Server.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/obj/Debug/Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Debug/Server.pdb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,29 +26,10 @@
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Server/ServerBase/ServerTest1.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-                  <folding>
-                    <marker date="1569435336532" expanded="false" signature="6:182" ph="..." />
-                    <marker date="1569435336532" expanded="true" signature="211:1528" ph="{...}" />
-                    <marker date="1569435336532" expanded="true" signature="242:1526" ph="{...}" />
-                    <marker date="1569435336532" expanded="true" signature="403:547" ph="{...}" />
-                    <marker date="1569435336532" expanded="true" signature="584:899" ph="{...}" />
-                    <marker date="1569435336532" expanded="true" signature="625:889" ph="{...}" />
-                    <marker date="1569435336532" expanded="true" signature="954:1520" ph="{...}" />
-                    <marker date="1569435336532" expanded="true" signature="1403:1510" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Server/Server.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
-                  <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+                <state>
+                  <caret line="2" column="11" lean-forward="true" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
                   <folding>
                     <marker date="1569431081371" expanded="false" signature="6:49" ph="..." />
                     <marker date="1569431081371" expanded="true" signature="92:1110" ph="{...}" />
@@ -68,11 +40,54 @@
               </provider>
             </entry>
           </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Server/ServerBase/ClientCommunication.cs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="555">
+                  <caret line="37" column="68" lean-forward="true" selection-start-line="37" selection-start-column="68" selection-end-line="37" selection-end-column="68" />
+                  <folding>
+                    <marker date="1569443806569" expanded="true" signature="6:62" ph="..." />
+                    <marker date="1569443806569" expanded="true" signature="116:1453" ph="{...}" />
+                    <marker date="1569443806569" expanded="true" signature="155:1451" ph="{...}" />
+                    <marker date="1569443806569" expanded="true" signature="710:967" ph="{...}" />
+                    <marker date="1569443806569" expanded="true" signature="1050:1309" ph="{...}" />
+                    <marker date="1569443806569" expanded="true" signature="1353:1445" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Core/Interfaces/IMessage.cs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+                  <folding>
+                    <marker date="1569443806490" expanded="true" signature="46:189" ph="{...}" />
+                    <marker date="1569443806490" expanded="true" signature="78:187" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Server/ObjectSendingTest/ObjectSendingTest.cs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+                  <folding>
+                    <marker date="1569437515319" expanded="true" signature="34:94" ph="{...}" />
+                    <marker date="1569437515319" expanded="true" signature="71:92" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Server/ServerBase/ClientListener.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+                <state relative-caret-position="368">
+                  <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
                   <folding>
                     <marker date="1569430680493" expanded="false" signature="6:81" ph="..." />
                     <marker date="1569430680493" expanded="true" signature="110:2616" ph="{...}" />
@@ -93,26 +108,26 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Server/ServerBase/ClientConnector.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="429">
-                  <caret line="107" column="33" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="33" />
+                <state relative-caret-position="255">
+                  <caret line="79" selection-start-line="79" selection-end-line="79" />
                   <folding>
-                    <marker date="1569435433202" expanded="false" signature="6:268" ph="..." />
-                    <marker date="1569435433202" expanded="true" signature="297:4628" ph="{...}" />
-                    <marker date="1569435433202" expanded="true" signature="332:4626" ph="{...}" />
-                    <marker date="1569435433202" expanded="true" signature="878:1033" ph="{...}" />
-                    <marker date="1569435433202" expanded="true" signature="1094:1479" ph="{...}" />
-                    <marker date="1569435433202" expanded="true" signature="1120:1264" ph="{...}" />
-                    <marker date="1569435433202" expanded="true" signature="1296:1469" ph="{...}" />
-                    <marker date="1569435433202" expanded="true" signature="1527:2767" ph="{...}" />
-                    <marker date="1569435433202" expanded="true" signature="1818:2036" ph="{...}" />
-                    <marker date="1569435433202" expanded="true" signature="2162:2330" ph="{...}" />
-                    <marker date="1569435433202" expanded="true" signature="2387:2518" ph="{...}" />
-                    <marker date="1569435433202" expanded="true" signature="2879:3201" ph="{...}" />
-                    <marker date="1569435433202" expanded="true" signature="3303:4289" ph="{...}" />
-                    <marker date="1569435433202" expanded="true" signature="4328:4620" ph="{...}" />
+                    <marker date="1569443338429" expanded="false" signature="6:268" ph="..." />
+                    <marker date="1569443338429" expanded="true" signature="297:4528" ph="{...}" />
+                    <marker date="1569443338429" expanded="true" signature="332:4526" ph="{...}" />
+                    <marker date="1569443338429" expanded="true" signature="986:1110" ph="{...}" />
+                    <marker date="1569443338429" expanded="true" signature="1171:1556" ph="{...}" />
+                    <marker date="1569443338429" expanded="true" signature="1197:1341" ph="{...}" />
+                    <marker date="1569443338429" expanded="true" signature="1373:1546" ph="{...}" />
+                    <marker date="1569443338429" expanded="true" signature="1604:2667" ph="{...}" />
+                    <marker date="1569443338429" expanded="true" signature="1895:2113" ph="{...}" />
+                    <marker date="1569443338429" expanded="true" signature="2239:2407" ph="{...}" />
+                    <marker date="1569443338429" expanded="true" signature="2464:2595" ph="{...}" />
+                    <marker date="1569443338429" expanded="true" signature="2779:3101" ph="{...}" />
+                    <marker date="1569443338429" expanded="true" signature="3203:4189" ph="{...}" />
+                    <marker date="1569443338429" expanded="true" signature="4228:4520" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -135,21 +150,34 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Core/ObjectSender/ObjectSerializer.cs">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="90">
-                  <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+                  <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
                   <folding>
-                    <marker date="1569355121521" expanded="false" signature="6:131" ph="..." />
-                    <marker date="1569355121521" expanded="true" signature="162:1329" ph="{...}" />
-                    <marker date="1569355121521" expanded="true" signature="198:1327" ph="{...}" />
-                    <marker date="1569355121521" expanded="true" signature="281:549" ph="{...}" />
-                    <marker date="1569355121521" expanded="true" signature="349:539" ph="{...}" />
-                    <marker date="1569355121521" expanded="true" signature="615:774" ph="{...}" />
-                    <marker date="1569355121521" expanded="true" signature="856:1094" ph="{...}" />
-                    <marker date="1569355121521" expanded="true" signature="924:1084" ph="{...}" />
-                    <marker date="1569355121521" expanded="true" signature="1149:1303" ph="{...}" />
+                    <marker date="1569443437742" expanded="false" signature="6:131" ph="..." />
+                    <marker date="1569443437742" expanded="true" signature="162:1325" ph="{...}" />
+                    <marker date="1569443437742" expanded="true" signature="198:1323" ph="{...}" />
+                    <marker date="1569443437742" expanded="true" signature="279:547" ph="{...}" />
+                    <marker date="1569443437742" expanded="true" signature="347:537" ph="{...}" />
+                    <marker date="1569443437742" expanded="true" signature="611:770" ph="{...}" />
+                    <marker date="1569443437742" expanded="true" signature="852:1090" ph="{...}" />
+                    <marker date="1569443437742" expanded="true" signature="920:1080" ph="{...}" />
+                    <marker date="1569443437742" expanded="true" signature="1145:1299" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Core/Interfaces/ISerializedData.cs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+                  <folding>
+                    <marker date="1569443437712" expanded="true" signature="42:129" ph="{...}" />
+                    <marker date="1569443437712" expanded="true" signature="81:127" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -173,10 +201,10 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Client/ClientBase/Connector.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="362">
+                <state relative-caret-position="669">
                   <caret line="55" column="85" lean-forward="true" selection-start-line="55" selection-start-column="85" selection-end-line="55" selection-end-column="85" />
                   <folding>
                     <marker date="1569435271767" expanded="false" signature="6:159" ph="..." />
@@ -184,6 +212,20 @@
                     <marker date="1569435271767" expanded="true" signature="217:2346" ph="{...}" />
                     <marker date="1569435271767" expanded="true" signature="427:486" ph="{...}" />
                     <marker date="1569435271767" expanded="true" signature="571:2340" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Server/ObjectSender/ObjectSender.cs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="30">
+                  <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+                  <folding>
+                    <marker date="1569442132182" expanded="true" signature="29:198" ph="{...}" />
+                    <marker date="1569442132182" expanded="true" signature="61:196" ph="{...}" />
+                    <marker date="1569442132182" expanded="true" signature="157:190" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -204,14 +246,19 @@
     <setting file="file://$PROJECT_DIR$/Client/Client.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Client/ClientBase/ClientOnSockets.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Server/ServerBase/ServerTest1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/Interfaces/IMessage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Server/ObjectSender/ObjectSender.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core/Interfaces/ISerializableData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/Interfaces/ISerializedData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DataClasses/ConnectionResponse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Server/ServerBase/ClientCommunication.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/DataClasses/PingStruct.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Server/Helpers/PortChecker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/ObjectSender/SerializedObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Server/ObjectSendingTest/ObjectSendingTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Server/Server.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/ObjectSender/ObjectSerializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Server/ServerBase/ClientConnector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/DataClasses/EncapsulatedList.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -230,9 +277,7 @@
         <option value="$PROJECT_DIR$/Client/ClientBase/ClientTest1.cs" />
         <option value="$PROJECT_DIR$/Server/Helpers/PortChecker.cs" />
         <option value="$PROJECT_DIR$/Core/DataClasses/AcceptMessage.cs" />
-        <option value="$PROJECT_DIR$/Core/ObjectSender/ObjectSerializer.cs" />
         <option value="$PROJECT_DIR$/Server/Program.cs" />
-        <option value="$PROJECT_DIR$/Server/ObjectSender/ObjectSender.cs" />
         <option value="$PROJECT_DIR$/Core/DataClasses/ConnectionResponse.cs" />
         <option value="$PROJECT_DIR$/Client/Program.cs" />
         <option value="$PROJECT_DIR$/Server/ServerBase/ClientListener.cs" />
@@ -240,7 +285,15 @@
         <option value="$PROJECT_DIR$/Client/Client.cs" />
         <option value="$PROJECT_DIR$/Client/ClientBase/Connector.cs" />
         <option value="$PROJECT_DIR$/Server/ServerBase/ServerTest1.cs" />
+        <option value="$PROJECT_DIR$/Core/DataClasses/EncapsulatedList.cs" />
+        <option value="$PROJECT_DIR$/Server/ObjectSendingTest/ObjectSendingTest.cs" />
+        <option value="$PROJECT_DIR$/Core/DataClasses/Ping.cs" />
+        <option value="$PROJECT_DIR$/Core/DataClasses/PingStruct.cs" />
+        <option value="$PROJECT_DIR$/Server/ObjectSender/ObjectSender.cs" />
         <option value="$PROJECT_DIR$/Server/ServerBase/ClientConnector.cs" />
+        <option value="$PROJECT_DIR$/Core/ObjectSender/ObjectSerializer.cs" />
+        <option value="$PROJECT_DIR$/Core/Interfaces/IMessage.cs" />
+        <option value="$PROJECT_DIR$/Server/ServerBase/ClientCommunication.cs" />
       </list>
     </option>
   </component>
@@ -279,7 +332,31 @@
             <path>
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="SpreadTheWork" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Core" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="DataClasses" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="SpreadTheWork" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Core" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Interfaces" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="SpreadTheWork" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Server" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="SpreadTheWork" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Server" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="ObjectSender" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="SpreadTheWork" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Server" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="ServerBase" type="24d0babc:SolutionExplorerModelNode" />
             </path>
           </expand>
           <select />
@@ -392,12 +469,12 @@
       <workItem from="1569071417700" duration="813000" />
       <workItem from="1569161491339" duration="5234000" />
       <workItem from="1569343962763" duration="15795000" />
-      <workItem from="1569428355339" duration="6930000" />
+      <workItem from="1569428355339" duration="12966000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32020000" />
+    <option name="totallyTimeSpent" value="38056000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -412,14 +489,14 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" x="-298" y="2" width="294" height="933" id="Project" order="0" type="FLOATING" weight="0.11247335" />
+      <window_info active="true" content_ui="combo" x="-298" y="2" width="294" height="933" id="Project" order="0" visible="true" weight="0.11247335" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3290461" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3290461" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -477,17 +554,6 @@
     <entry file="file://$PROJECT_DIR$/Server/Interfaces/ISerializableData.cs" />
     <entry file="file://$PROJECT_DIR$/Server/ObjectSender/SerializedObject.cs" />
     <entry file="file://$PROJECT_DIR$/Server/ObjectSender/ObjectSerializer.cs" />
-    <entry file="file://$PROJECT_DIR$/Core/Interfaces/ISerializableData.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding>
-            <marker date="1569162299398" expanded="true" signature="42:131" ph="{...}" />
-            <marker date="1569162299398" expanded="true" signature="83:129" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Core/Class1.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -510,18 +576,6 @@
             <marker date="1569354546186" expanded="true" signature="182:470" ph="{...}" />
             <marker date="1569354546186" expanded="true" signature="259:372" ph="{...}" />
             <marker date="1569354546186" expanded="true" signature="402:460" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/ObjectSender/ObjectSender.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="70" selection-start-line="4" selection-start-column="70" selection-end-line="4" selection-end-column="70" />
-          <folding>
-            <marker date="1569357610136" expanded="true" signature="29:180" ph="{...}" />
-            <marker date="1569357610136" expanded="true" signature="61:178" ph="{...}" />
-            <marker date="1569357610136" expanded="true" signature="139:172" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -579,26 +633,8 @@
         <state relative-caret-position="75">
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
           <folding>
-            <marker date="1569162834697" expanded="false" signature="6:74" ph="..." />
-            <marker date="1569162834697" expanded="true" signature="189:242" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/ObjectSender/ObjectSerializer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-          <folding>
-            <marker date="1569355121521" expanded="false" signature="6:131" ph="..." />
-            <marker date="1569355121521" expanded="true" signature="162:1329" ph="{...}" />
-            <marker date="1569355121521" expanded="true" signature="198:1327" ph="{...}" />
-            <marker date="1569355121521" expanded="true" signature="281:549" ph="{...}" />
-            <marker date="1569355121521" expanded="true" signature="349:539" ph="{...}" />
-            <marker date="1569355121521" expanded="true" signature="615:774" ph="{...}" />
-            <marker date="1569355121521" expanded="true" signature="856:1094" ph="{...}" />
-            <marker date="1569355121521" expanded="true" signature="924:1084" ph="{...}" />
-            <marker date="1569355121521" expanded="true" signature="1149:1303" ph="{...}" />
+            <marker date="1569443437665" expanded="false" signature="6:74" ph="..." />
+            <marker date="1569443437665" expanded="true" signature="187:240" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -621,7 +657,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/ClientBase/Connector.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
+        <state relative-caret-position="669">
           <caret line="55" column="85" lean-forward="true" selection-start-line="55" selection-start-column="85" selection-end-line="55" selection-end-column="85" />
           <folding>
             <marker date="1569435271767" expanded="false" signature="6:159" ph="..." />
@@ -633,15 +669,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Server.cs">
+    <entry file="file://$PROJECT_DIR$/Core/DataClasses/EncapsulatedList.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+        <state relative-caret-position="120">
+          <caret line="8" column="48" lean-forward="true" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
           <folding>
-            <marker date="1569431081371" expanded="false" signature="6:49" ph="..." />
-            <marker date="1569431081371" expanded="true" signature="92:1110" ph="{...}" />
-            <marker date="1569431081371" expanded="true" signature="120:1108" ph="{...}" />
-            <marker date="1569431081371" expanded="true" signature="275:1102" ph="{...}" />
+            <marker date="1569437370369" expanded="true" signature="6:47" ph="..." />
+            <marker date="1569437370369" expanded="true" signature="75:202" ph="{...}" />
+            <marker date="1569437370369" expanded="true" signature="139:200" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -663,10 +698,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/ServerBase/ClientListener.cs">
+    <entry file="file://$PROJECT_DIR$/Core/DataClasses/PingStruct.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+          <folding>
+            <marker date="1569441449057" expanded="true" signature="45:128" ph="{...}" />
+            <marker date="1569441449057" expanded="true" signature="76:126" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/ObjectSender/ObjectSender.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+          <folding>
+            <marker date="1569442132182" expanded="true" signature="29:198" ph="{...}" />
+            <marker date="1569442132182" expanded="true" signature="61:196" ph="{...}" />
+            <marker date="1569442132182" expanded="true" signature="157:190" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Server.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="2" column="11" lean-forward="true" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+          <folding>
+            <marker date="1569431081371" expanded="false" signature="6:49" ph="..." />
+            <marker date="1569431081371" expanded="true" signature="92:1110" ph="{...}" />
+            <marker date="1569431081371" expanded="true" signature="120:1108" ph="{...}" />
+            <marker date="1569431081371" expanded="true" signature="275:1102" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/ServerBase/ClientConnector.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
+          <folding>
+            <marker date="1569443338429" expanded="false" signature="6:268" ph="..." />
+            <marker date="1569443338429" expanded="true" signature="297:4528" ph="{...}" />
+            <marker date="1569443338429" expanded="true" signature="332:4526" ph="{...}" />
+            <marker date="1569443338429" expanded="true" signature="986:1110" ph="{...}" />
+            <marker date="1569443338429" expanded="true" signature="1171:1556" ph="{...}" />
+            <marker date="1569443338429" expanded="true" signature="1197:1341" ph="{...}" />
+            <marker date="1569443338429" expanded="true" signature="1373:1546" ph="{...}" />
+            <marker date="1569443338429" expanded="true" signature="1604:2667" ph="{...}" />
+            <marker date="1569443338429" expanded="true" signature="1895:2113" ph="{...}" />
+            <marker date="1569443338429" expanded="true" signature="2239:2407" ph="{...}" />
+            <marker date="1569443338429" expanded="true" signature="2464:2595" ph="{...}" />
+            <marker date="1569443338429" expanded="true" signature="2779:3101" ph="{...}" />
+            <marker date="1569443338429" expanded="true" signature="3203:4189" ph="{...}" />
+            <marker date="1569443338429" expanded="true" signature="4228:4520" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/ObjectSendingTest/ObjectSendingTest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+          <folding>
+            <marker date="1569437515319" expanded="true" signature="34:94" ph="{...}" />
+            <marker date="1569437515319" expanded="true" signature="71:92" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/ServerBase/ClientListener.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
           <folding>
             <marker date="1569430680493" expanded="false" signature="6:81" ph="..." />
             <marker date="1569430680493" expanded="true" signature="110:2616" ph="{...}" />
@@ -686,25 +791,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/ServerBase/ClientConnector.cs">
+    <entry file="file://$PROJECT_DIR$/Core/Interfaces/ISerializedData.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="107" column="33" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="33" />
+        <state relative-caret-position="60">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
           <folding>
-            <marker date="1569435433202" expanded="false" signature="6:268" ph="..." />
-            <marker date="1569435433202" expanded="true" signature="297:4628" ph="{...}" />
-            <marker date="1569435433202" expanded="true" signature="332:4626" ph="{...}" />
-            <marker date="1569435433202" expanded="true" signature="878:1033" ph="{...}" />
-            <marker date="1569435433202" expanded="true" signature="1094:1479" ph="{...}" />
-            <marker date="1569435433202" expanded="true" signature="1120:1264" ph="{...}" />
-            <marker date="1569435433202" expanded="true" signature="1296:1469" ph="{...}" />
-            <marker date="1569435433202" expanded="true" signature="1527:2767" ph="{...}" />
-            <marker date="1569435433202" expanded="true" signature="1818:2036" ph="{...}" />
-            <marker date="1569435433202" expanded="true" signature="2162:2330" ph="{...}" />
-            <marker date="1569435433202" expanded="true" signature="2387:2518" ph="{...}" />
-            <marker date="1569435433202" expanded="true" signature="2879:3201" ph="{...}" />
-            <marker date="1569435433202" expanded="true" signature="3303:4289" ph="{...}" />
-            <marker date="1569435433202" expanded="true" signature="4328:4620" ph="{...}" />
+            <marker date="1569443437712" expanded="true" signature="42:129" ph="{...}" />
+            <marker date="1569443437712" expanded="true" signature="81:127" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/ObjectSender/ObjectSerializer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding>
+            <marker date="1569443437742" expanded="false" signature="6:131" ph="..." />
+            <marker date="1569443437742" expanded="true" signature="162:1325" ph="{...}" />
+            <marker date="1569443437742" expanded="true" signature="198:1323" ph="{...}" />
+            <marker date="1569443437742" expanded="true" signature="279:547" ph="{...}" />
+            <marker date="1569443437742" expanded="true" signature="347:537" ph="{...}" />
+            <marker date="1569443437742" expanded="true" signature="611:770" ph="{...}" />
+            <marker date="1569443437742" expanded="true" signature="852:1090" ph="{...}" />
+            <marker date="1569443437742" expanded="true" signature="920:1080" ph="{...}" />
+            <marker date="1569443437742" expanded="true" signature="1145:1299" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Interfaces/IMessage.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <folding>
+            <marker date="1569443806490" expanded="true" signature="46:189" ph="{...}" />
+            <marker date="1569443806490" expanded="true" signature="78:187" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/ServerBase/ClientCommunication.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="68" lean-forward="true" selection-start-line="37" selection-start-column="68" selection-end-line="37" selection-end-column="68" />
+          <folding>
+            <marker date="1569443806569" expanded="true" signature="6:62" ph="..." />
+            <marker date="1569443806569" expanded="true" signature="116:1453" ph="{...}" />
+            <marker date="1569443806569" expanded="true" signature="155:1451" ph="{...}" />
+            <marker date="1569443806569" expanded="true" signature="710:967" ph="{...}" />
+            <marker date="1569443806569" expanded="true" signature="1050:1309" ph="{...}" />
+            <marker date="1569443806569" expanded="true" signature="1353:1445" ph="{...}" />
           </folding>
         </state>
       </provider>

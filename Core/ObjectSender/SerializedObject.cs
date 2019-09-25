@@ -5,7 +5,7 @@ using Server.Interfaces;
 namespace Server.ObjectSender
 {
     [SerializableAttribute]
-    public class SerializedObject : ISerializableData
+    public class SerializedObject : ISerializedData
     {
         public byte[] data { get; set; }
     }

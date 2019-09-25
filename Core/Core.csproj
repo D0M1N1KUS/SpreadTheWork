@@ -50,7 +50,12 @@
     <ItemGroup>
         <Compile Include="Class1.cs" />
         <Compile Include="DataClasses\ConnectionResponse.cs" />
-        <Compile Include="Interfaces\ISerializableData.cs" />
+        <Compile Include="DataClasses\EncapsulatedList.cs" />
+        <Compile Include="DataClasses\Message.cs" />
+        <Compile Include="DataClasses\PingStruct.cs" />
+        <Compile Include="DataClasses\SerializedData.cs" />
+        <Compile Include="Interfaces\IMessage.cs" />
+        <Compile Include="Interfaces\ISerializedData.cs" />
         <Compile Include="Interfaces\ISpreadable.cs" />
         <Compile Include="ObjectSender\ObjectSerializer.cs" />
         <Compile Include="ObjectSender\SerializedObject.cs" />

@@ -24,15 +24,17 @@ namespace Server.ServerBase
         private int currentClientId = 1;
 
         private ObjectSerializer _objectSerializer;
-        
-        private ConcurrentDictionary<int, NetworkStream> connectedClients;
+
+        private event AddClientCallback addClientEvent;
 
         private object clientConnectorLock = new object();
+        
+        public delegate void AddClientCallback(int clientId, NetworkStream networkStream);
 
-        public ClientConnector()
+        public ClientConnector(AddClientCallback addClientCallback)
         {
             _objectSerializer = new ObjectSerializer();
-            connectedClients = new ConcurrentDictionary<int, NetworkStream>();
+            addClientEvent = addClientCallback;
         }
         
         public void ConnectClient(TcpClient client)
@@ -75,11 +77,8 @@ namespace Server.ServerBase
                 return;
             }
 
-            do
-            {
-                Logger.Debug($"Trying to add client with id {clientId}.");
-            } while (!connectedClients.TryAdd(clientId, clientStream));
-            Logger.Info($"Client with id {clientId} added.");
+
+            addClientEvent?.Invoke(clientId, clientStream);
         }
 
         private static void waitForClientResponse(NetworkStream clientStream, int clientId, out byte[] buffer)

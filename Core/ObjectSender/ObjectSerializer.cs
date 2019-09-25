@@ -7,7 +7,7 @@ namespace Server.ObjectSender
 {
     public class ObjectSerializer
     {
-        public static ISerializableData Serialize(object serializableObject)
+        public static ISerializedData Serialize(object serializableObject)
         {
             using (var memoryStream = new MemoryStream())
             {
@@ -16,7 +16,7 @@ namespace Server.ObjectSender
             }
         }
 
-        public static object Deserialize(ISerializableData data)
+        public static object Deserialize(ISerializedData data)
         {
             using (var memorySteam = new MemoryStream(data.data))
                 return (new BinaryFormatter()).Deserialize(memorySteam);

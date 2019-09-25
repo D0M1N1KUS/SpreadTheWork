@@ -25,9 +25,12 @@
         <e p="Core.csproj" t="IncludeRecursive" />
         <e p="DataClasses" t="Include">
           <e p="ConnectionResponse.cs" t="Include" />
+          <e p="EncapsulatedList.cs" t="Include" />
+          <e p="PingStruct.cs" t="Include" />
         </e>
         <e p="Interfaces" t="Include">
-          <e p="ISerializableData.cs" t="Include" />
+          <e p="IMessage.cs" t="Include" />
+          <e p="ISerializedData.cs" t="Include" />
           <e p="ISpreadable.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive" />
@@ -51,6 +54,9 @@
         <e p="ObjectSender" t="Include">
           <e p="ObjectSender.cs" t="Include" />
         </e>
+        <e p="ObjectSendingTest" t="Include">
+          <e p="ObjectSendingTest.cs" t="Include" />
+        </e>
         <e p="packages.config" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
@@ -58,6 +64,7 @@
         <e p="Server.cs" t="Include" />
         <e p="Server.csproj" t="IncludeRecursive" />
         <e p="ServerBase" t="Include">
+          <e p="ClientCommunication.cs" t="Include" />
           <e p="ClientConnector.cs" t="Include" />
           <e p="ClientListener.cs" t="Include" />
           <e p="ServerTest1.cs" t="Include" />
