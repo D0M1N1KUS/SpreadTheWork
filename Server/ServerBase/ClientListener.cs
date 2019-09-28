@@ -12,7 +12,8 @@ namespace Server.ServerBase
         private TcpListener _listener;
         private bool _listen;
 
-        private Thread _listenerThread;
+        private readonly Thread _listenerThread;
+        
         private event ClientConnectedCallbackEvent _clientConnectedEvent;
 
         public ClientListener(int port)

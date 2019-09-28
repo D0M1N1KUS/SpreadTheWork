@@ -43,8 +43,19 @@ namespace Client
             Console.WriteLine("Server Port:");
             var port = int.Parse(Console.ReadLine() ?? throw new Exception("Unable to parse server port!"));
 
-            var connector = new Connector();
-            var networkStream = connector.ConnectToServer(ip, port);
+//            var connector = new Connector();
+//            var networkStream = connector.ConnectToServer(ip, port);
+            var serverCommunication = new ServerCommunication(ip, port);
+
+            Logger.Info("Starting test.");
+            try
+            {
+                ObjectSendingTest.ObjectSendingTest.TryToReceiveObjects(serverCommunication);
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
         }
     }
 }

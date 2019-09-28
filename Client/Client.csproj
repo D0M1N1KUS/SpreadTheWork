@@ -52,6 +52,8 @@
         <Compile Include="ClientBase\ClientTest1.cs" />
         <Compile Include="ClientBase\Connector.cs" />
         <Compile Include="Client.cs" />
+        <Compile Include="ClientBase\ServerCommunication.cs" />
+        <Compile Include="ObjectSendingTest\ObjectSendingTest.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>

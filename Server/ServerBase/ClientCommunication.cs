@@ -19,17 +19,23 @@ namespace Server.ServerBase
         private ClientListener _listener;
         private ClientConnector _connector;
 
-        private ConcurrentDictionary<int, NetworkStream> connectedClients;
+        public ConcurrentDictionary<int, NetworkStream> ConnectedClients { get; private set; }
         private ConcurrentDictionary<int, Thread> clientThreads;
 
         private ConcurrentQueue<IMessage> outgoingMessagesQueue;
         private ConcurrentQueue<IMessage> incommingMessagesQueue;
 
+        /// <summary>
+        /// Initializes basic server-client communication and listener classes
+        /// </summary>
+        /// <param name="listener">Optional. Allows to add client listener with custom listening port.</param>
+        /// <param name="connector">Optional. Allows to add client connector with custom AddConnectionCallback.</param>
         public ClientCommunication(ClientListener listener = null, ClientConnector connector = null)
         {
             _listener = listener ?? new ClientListener(DEFAULT_LISTENING_PORT);
             _connector = connector ?? new ClientConnector(addClientCallback);
-            connectedClients = new ConcurrentDictionary<int, NetworkStream>();
+            _listener.AddConnectionCallback(_connector.ConnectClient);
+            ConnectedClients = new ConcurrentDictionary<int, NetworkStream>();
         }
 
         private void addClientCallback(int clientId, NetworkStream networkStream)
@@ -37,31 +43,28 @@ namespace Server.ServerBase
             do
             {
                 Logger.Debug($"Trying to add client with id {clientId}.");
-            } while (!connectedClients.TryAdd(clientId, networkStream));
+            } while (!ConnectedClients.TryAdd(clientId, networkStream));
             Logger.Info($"Client with id {clientId} added.");
-
-//            do
-//            {
-//                
-//            } while (!clientThreads.TryAdd(clientId)});
         }
 
         public void Send(IMessage message)
         {
-            if (!connectedClients.ContainsKey(message.DestinationClient))
+            if (!ConnectedClients.ContainsKey(message.DestinationClient))
             {
                 Logger.Error($"Tried to send message to unreachble client {message.DestinationClient}");
                 return;
             }
             
-            connectedClients[message.DestinationClient]
+            ConnectedClients[message.DestinationClient]
                 .Write(message.SerializedData.data,0,message.SerializedData.data.Length);
         }
 
-        public Task<IMessage> Receive(int clientId)
+        public Task<ISerializedData> Receive(int clientId)
         {
-            var task = new Task<IMessage>(() => receive(clientId));
-            
+            var task = new Task<ISerializedData>(() => receive(clientId));
+            task.Start();
+
+            return task;
         }
 
         private ISerializedData receive(int clientId)
@@ -73,7 +76,7 @@ namespace Server.ServerBase
             var bytesList = new List<byte>();
             var buffer = new byte[1024];
             
-            using (var binaryReader = new BinaryReader(connectedClients[clientId]))
+            using (var binaryReader = new BinaryReader(ConnectedClients[clientId]))
             {
                 var bytesRead = binaryReader.Read(buffer, 0, buffer.Length);
                 for (var i = 0; i < bytesRead; i++)

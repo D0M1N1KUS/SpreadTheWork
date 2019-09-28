@@ -13,8 +13,11 @@ namespace Client.ClientBase
         public static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         
         private TcpClient _client;
-
+        
         private int clientId;
+        
+        public bool connectionSucceeded { get; private set; } = false;
+        public NetworkStream serverNetworkStream { get; private set; }
         
         public Connector()
         {
@@ -49,13 +52,14 @@ namespace Client.ClientBase
             var socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             socket.Connect(IPAddress.Parse(ipAddress), connectionResponse.port);
             
-            var serverNetworkStream = new NetworkStream(socket, true);
+            serverNetworkStream = new NetworkStream(socket, true);
 
             var responseForServer = ObjectSerializer.SerializeToBytes(connectionResponse);            
             Logger.Debug("Sending connection response to server.");
             serverNetworkStream.Write(responseForServer,0, responseForServer.Length);
             
             Logger.Info("Connection established!");
+            connectionSucceeded = true;
             return serverNetworkStream;
         }
     }

@@ -1,7 +1,16 @@
-2019-09-25 20:19:12.2284|INFO|Client.Client|Client
-2019-09-25 20:19:21.0129|DEBUG|Client.ClientBase.Connector|Server responded.
-2019-09-25 20:19:21.0129|DEBUG|Client.ClientBase.Connector|Server accepted connection on port 3024. Id of client is 3.
-2019-09-25 20:19:21.0129|DEBUG|Client.ClientBase.Connector|Connecting to server on port 3024...
-2019-09-25 20:19:21.0129|DEBUG|Client.ClientBase.Connector|Sending connection response to server.
-2019-09-25 20:19:21.0129|INFO|Client.ClientBase.Connector|Connection established!
-2019-09-25 20:19:21.0129|INFO|Client.Client|Exitting...
+2019-09-28 20:35:31.8585|INFO|Client.Client|Client
+2019-09-28 20:35:42.8963|DEBUG|Client.ClientBase.Connector|Server responded.
+2019-09-28 20:35:42.8993|DEBUG|Client.ClientBase.Connector|Server accepted connection on port 3022. Id of client is 1.
+2019-09-28 20:35:42.8993|DEBUG|Client.ClientBase.Connector|Connecting to server on port 3022...
+2019-09-28 20:35:42.8993|DEBUG|Client.ClientBase.Connector|Sending connection response to server.
+2019-09-28 20:35:42.8993|INFO|Client.ClientBase.Connector|Connection established!
+2019-09-28 20:35:42.8993|INFO|Client.Client|Starting test.
+2019-09-28 20:35:43.0104|INFO|Client.ObjectSendingTest.ObjectSendingTest|Lists match!!!
+2019-09-28 20:35:43.0294|ERROR|Client.Client|System.Runtime.Serialization.SerializationException: Próba deserializacji pustego strumienia.
+   w System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   w System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   w Server.ObjectSender.ObjectSerializer.Deserialize(Byte[] data) w D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Core\ObjectSender\ObjectSerializer.cs:wiersz 37
+   w Client.ClientBase.ServerCommunication.Receive() w D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\ClientBase\ServerCommunication.cs:wiersz 56
+   w Client.ObjectSendingTest.ObjectSendingTest.TryToReceiveObjects(ServerCommunication c) w D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\ObjectSendingTest\ObjectSendingTest.cs:wiersz 18
+   w Client.Client.runClient() w D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\Client.cs:wiersz 53
+2019-09-28 20:35:43.0494|INFO|Client.Client|Exitting...

@@ -2,6 +2,7 @@
 using System.Threading;
 using NLog;
 using Server.ServerBase;
+using Server.ObjectSendingTest;
 
 namespace Server
 {
@@ -19,14 +20,27 @@ namespace Server
             NLog.LogManager.Configuration = config;
             
             Logger.Info("Server");
-            var clientListeners = new ClientListener(1234);
-            var clientConnector = new ClientConnector();
-            clientListeners.AddConnectionCallback(clientConnector.ConnectClient);
-            
-            while(true)
+//            var clientListeners = new ClientListener(1234);
+//            var clientConnector = new ClientConnector();
+//            clientListeners.AddConnectionCallback(clientConnector.ConnectClient);
+            var clientCommunication = new ClientCommunication();
+            while(clientCommunication.ConnectedClients.Count == 0)
                 Thread.Sleep(100);
-
+            
+            Logger.Info("Starting test.");
+            try
+            {
+                ObjectSendingTest.ObjectSendingTest.TryToSendObjects(clientCommunication);
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
+            
+            Logger.Info("Exitting...");
             Console.ReadLine();
         }
+        
+       
     }
 }
