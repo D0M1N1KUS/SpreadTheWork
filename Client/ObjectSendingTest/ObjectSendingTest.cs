@@ -8,20 +8,26 @@ namespace Client.ObjectSendingTest
 {
     public class ObjectSendingTest
     {
+        private static NLog.Logger logger;
         public static void TryToReceiveObjects(ServerCommunication c)
         {
-            var logger = NLog.LogManager.GetCurrentClassLogger();
+            logger = NLog.LogManager.GetCurrentClassLogger();
 
+            logger.Info("Waiting for list...");
             var receivedObject = checkObject(c.Receive(), 10);
-            c.Send(receivedObject);
+            logger.Info("Sending list back...");
+            c.Send(receivedObject).Wait(10000);
+            logger.Info("List sent! Wating for next list...");
             
             receivedObject = checkObject(c.Receive(), 1010);
-            c.Send(receivedObject);
-            
+            logger.Info("Sending list back...");
+            c.Send(receivedObject).Wait(10000);
+            logger.Info("Done! Test succeeded!");
         }
 
         private static object checkObject(object receivedObject, int itemCount)
         {
+            logger.Info("Received list!");
             if(!(receivedObject is EncapsulatedList))
                 throw new Exception($"Type missmatch: Expected {typeof(EncapsulatedList).Name}, but received {receivedObject.GetType().Name}.");
 

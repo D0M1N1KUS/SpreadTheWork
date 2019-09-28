@@ -48,10 +48,11 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Class1.cs" />
+        <Compile Include="CommonData.cs" />
         <Compile Include="DataClasses\ConnectionResponse.cs" />
         <Compile Include="DataClasses\EncapsulatedList.cs" />
         <Compile Include="DataClasses\Message.cs" />
+        <Compile Include="DataClasses\MessageInfo.cs" />
         <Compile Include="DataClasses\PingStruct.cs" />
         <Compile Include="DataClasses\SerializedData.cs" />
         <Compile Include="Interfaces\IMessage.cs" />

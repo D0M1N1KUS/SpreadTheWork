@@ -29,10 +29,13 @@ namespace Server.ObjectSendingTest
                 SerializedData = ObjectSerializer.Serialize(listToSend)
             };
             
+            logger.Info("Sending list...");
             c.Send(message);
+            logger.Info("List sent. Wating for list...");
             var receiveTask = c.Receive(destinationClient);
             receiveTask.Wait(10000);
             checkResponse(receiveTask.Result, logger);
+            logger.Info("Received list.");
             
             for (var i = 1; i <= 1000; i++)
             {
@@ -45,10 +48,14 @@ namespace Server.ObjectSendingTest
                 SerializedData = ObjectSerializer.Serialize(listToSend)
             };
             
-            c.Send(message);
+            logger.Info("Sending list...");
+            c.Send(message).Wait(10000);
+            
+            logger.Info("List sent. Wating for list...");
             receiveTask = c.Receive(destinationClient);
             receiveTask.Wait(10000);
             checkResponse(receiveTask.Result, logger);
+            logger.Info("Received list.");
         }
 
         private static void checkResponse(ISerializedData d, NLog.Logger logger)

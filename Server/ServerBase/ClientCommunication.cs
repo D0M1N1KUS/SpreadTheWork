@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Sockets;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading;
 using System.Threading.Tasks;
 using Core.DataClasses;
@@ -18,6 +19,8 @@ namespace Server.ServerBase
         
         private ClientListener _listener;
         private ClientConnector _connector;
+
+        private ConcurrentDictionary<int, BinaryReader> BinaryReaders;
 
         public ConcurrentDictionary<int, NetworkStream> ConnectedClients { get; private set; }
         private ConcurrentDictionary<int, Thread> clientThreads;
@@ -36,6 +39,7 @@ namespace Server.ServerBase
             _connector = connector ?? new ClientConnector(addClientCallback);
             _listener.AddConnectionCallback(_connector.ConnectClient);
             ConnectedClients = new ConcurrentDictionary<int, NetworkStream>();
+            BinaryReaders = new ConcurrentDictionary<int, BinaryReader>();
         }
 
         private void addClientCallback(int clientId, NetworkStream networkStream)
@@ -45,9 +49,21 @@ namespace Server.ServerBase
                 Logger.Debug($"Trying to add client with id {clientId}.");
             } while (!ConnectedClients.TryAdd(clientId, networkStream));
             Logger.Info($"Client with id {clientId} added.");
+
+            do
+            {
+                Thread.Sleep(10);
+            } while (!BinaryReaders.TryAdd(clientId, new BinaryReader(networkStream)));
         }
 
-        public void Send(IMessage message)
+        public Task Send(IMessage message)
+        {
+            var task = new Task(() => send(message));
+            task.Start();
+            return task;
+        }
+        
+        private void send(IMessage message)
         {
             if (!ConnectedClients.ContainsKey(message.DestinationClient))
             {
@@ -55,8 +71,14 @@ namespace Server.ServerBase
                 return;
             }
             
+            var messageInfoSerialized = ObjectSerializer
+                .Serialize(new MessageInfo(){LengthInBytes = message.SerializedData.data.Length});
+            ConnectedClients[message.DestinationClient]
+                .Write(messageInfoSerialized.data, 0, messageInfoSerialized.data.Length);
+            
             ConnectedClients[message.DestinationClient]
                 .Write(message.SerializedData.data,0,message.SerializedData.data.Length);
+            Logger.Info($"Sent {message.SerializedData.data.Length} bytes.");
         }
 
         public Task<ISerializedData> Receive(int clientId)
@@ -69,20 +91,30 @@ namespace Server.ServerBase
 
         private ISerializedData receive(int clientId)
         {
-//            using (var streamReader = new StreamReader(connectedClients[clientId]))
-//            {
-//                streamReader.Read(,)
-//            }
             var bytesList = new List<byte>();
-            var buffer = new byte[1024];
+            var buffer = new byte[Core.CommonData.NETWORK_BUFFER_SIZE];
+            var bytesRead = 0;
+
+            var clientNetworkStream = ConnectedClients[clientId];
+//            do
+//            {
+//                bytesRead = binaryReader.Read(buffer, 0, buffer.Length);
+//                for (var i = 0; i < bytesRead; i++)
+//                    bytesList.Add(buffer[i]);
+//            } while (binaryReader.PeekChar() > 0);
             
-            using (var binaryReader = new BinaryReader(ConnectedClients[clientId]))
+            bytesRead = clientNetworkStream.Read(buffer, 0, buffer.Length);
+            var infoMessage = (MessageInfo)ObjectSerializer.Deserialize(buffer);
+            
+
+            for(var i = 0; i <= infoMessage.LengthInBytes / Core.CommonData.NETWORK_BUFFER_SIZE; i++)
             {
-                var bytesRead = binaryReader.Read(buffer, 0, buffer.Length);
-                for (var i = 0; i < bytesRead; i++)
-                    bytesList.Add(buffer[i]);
+                bytesRead = ConnectedClients[clientId].Read(buffer, 0, buffer.Length);
+                for(var j = 0; j < bytesRead; j++)
+                    bytesList.Add(buffer[j]);
             }
 
+            Logger.Info($"Received {bytesList.Count} bytes.");
             return new SerializedData() {data = bytesList.ToArray()};
         }
     }

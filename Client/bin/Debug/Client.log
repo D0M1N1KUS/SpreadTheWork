@@ -1,16 +1,21 @@
-2019-09-28 20:35:31.8585|INFO|Client.Client|Client
-2019-09-28 20:35:42.8963|DEBUG|Client.ClientBase.Connector|Server responded.
-2019-09-28 20:35:42.8993|DEBUG|Client.ClientBase.Connector|Server accepted connection on port 3022. Id of client is 1.
-2019-09-28 20:35:42.8993|DEBUG|Client.ClientBase.Connector|Connecting to server on port 3022...
-2019-09-28 20:35:42.8993|DEBUG|Client.ClientBase.Connector|Sending connection response to server.
-2019-09-28 20:35:42.8993|INFO|Client.ClientBase.Connector|Connection established!
-2019-09-28 20:35:42.8993|INFO|Client.Client|Starting test.
-2019-09-28 20:35:43.0104|INFO|Client.ObjectSendingTest.ObjectSendingTest|Lists match!!!
-2019-09-28 20:35:43.0294|ERROR|Client.Client|System.Runtime.Serialization.SerializationException: Próba deserializacji pustego strumienia.
-   w System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
-   w System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
-   w Server.ObjectSender.ObjectSerializer.Deserialize(Byte[] data) w D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Core\ObjectSender\ObjectSerializer.cs:wiersz 37
-   w Client.ClientBase.ServerCommunication.Receive() w D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\ClientBase\ServerCommunication.cs:wiersz 56
-   w Client.ObjectSendingTest.ObjectSendingTest.TryToReceiveObjects(ServerCommunication c) w D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\ObjectSendingTest\ObjectSendingTest.cs:wiersz 18
-   w Client.Client.runClient() w D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\Client.cs:wiersz 53
-2019-09-28 20:35:43.0494|INFO|Client.Client|Exitting...
+2019-09-29 00:48:19.6391|INFO|Client.Client|Client
+2019-09-29 00:48:36.9815|DEBUG|Client.ClientBase.Connector|Server responded.
+2019-09-29 00:48:36.9815|DEBUG|Client.ClientBase.Connector|Server accepted connection on port 3022. Id of client is 1.
+2019-09-29 00:48:36.9815|DEBUG|Client.ClientBase.Connector|Connecting to server on port 3022...
+2019-09-29 00:48:36.9815|DEBUG|Client.ClientBase.Connector|Sending connection response to server.
+2019-09-29 00:48:36.9895|INFO|Client.ClientBase.Connector|Connection established!
+2019-09-29 00:48:36.9895|INFO|Client.Client|Starting test.
+2019-09-29 00:48:36.9895|INFO|Client.ObjectSendingTest.ObjectSendingTest|Waiting for list...
+2019-09-29 00:48:37.0612|INFO|Client.ClientBase.ServerCommunication|Received 519 bytes.
+2019-09-29 00:48:37.0612|INFO|Client.ObjectSendingTest.ObjectSendingTest|Received list!
+2019-09-29 00:48:37.0682|INFO|Client.ObjectSendingTest.ObjectSendingTest|Lists match!!!
+2019-09-29 00:48:37.0682|INFO|Client.ObjectSendingTest.ObjectSendingTest|Sending list back...
+2019-09-29 00:48:37.0682|INFO|Client.ClientBase.ServerCommunication|Sent 519 bytes.
+2019-09-29 00:48:37.0682|INFO|Client.ObjectSendingTest.ObjectSendingTest|List sent! Wating for next list...
+2019-09-29 00:48:37.0892|INFO|Client.ClientBase.ServerCommunication|Received 4551 bytes.
+2019-09-29 00:48:37.0892|INFO|Client.ObjectSendingTest.ObjectSendingTest|Received list!
+2019-09-29 00:48:37.0892|INFO|Client.ObjectSendingTest.ObjectSendingTest|Lists match!!!
+2019-09-29 00:48:37.0892|INFO|Client.ObjectSendingTest.ObjectSendingTest|Sending list back...
+2019-09-29 00:48:37.0892|INFO|Client.ClientBase.ServerCommunication|Sent 4551 bytes.
+2019-09-29 00:48:37.0992|INFO|Client.ObjectSendingTest.ObjectSendingTest|Done! Test succeeded!
+2019-09-29 00:48:37.0992|INFO|Client.Client|Exitting...

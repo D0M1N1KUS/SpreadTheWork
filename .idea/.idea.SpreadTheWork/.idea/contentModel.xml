@@ -25,12 +25,13 @@
       </e>
       <e p="Core" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Class1.cs" t="Include" />
+        <e p="CommonData.cs" t="Include" />
         <e p="Core.csproj" t="IncludeRecursive" />
         <e p="DataClasses" t="Include">
           <e p="ConnectionResponse.cs" t="Include" />
           <e p="EncapsulatedList.cs" t="Include" />
           <e p="Message.cs" t="Include" />
+          <e p="MessageInfo.cs" t="Include" />
           <e p="PingStruct.cs" t="Include" />
           <e p="SerializedData.cs" t="Include" />
         </e>
