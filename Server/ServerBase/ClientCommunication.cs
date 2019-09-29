@@ -78,7 +78,7 @@ namespace Server.ServerBase
             
             ConnectedClients[message.DestinationClient]
                 .Write(message.SerializedData.data,0,message.SerializedData.data.Length);
-            Logger.Info($"Sent {message.SerializedData.data.Length} bytes.");
+            Logger.Debug($"Sent {message.SerializedData.data.Length} bytes.");
         }
 
         public Task<ISerializedData> Receive(int clientId)
@@ -96,12 +96,6 @@ namespace Server.ServerBase
             var bytesRead = 0;
 
             var clientNetworkStream = ConnectedClients[clientId];
-//            do
-//            {
-//                bytesRead = binaryReader.Read(buffer, 0, buffer.Length);
-//                for (var i = 0; i < bytesRead; i++)
-//                    bytesList.Add(buffer[i]);
-//            } while (binaryReader.PeekChar() > 0);
             
             bytesRead = clientNetworkStream.Read(buffer, 0, buffer.Length);
             var infoMessage = (MessageInfo)ObjectSerializer.Deserialize(buffer);
@@ -114,7 +108,7 @@ namespace Server.ServerBase
                     bytesList.Add(buffer[j]);
             }
 
-            Logger.Info($"Received {bytesList.Count} bytes.");
+            Logger.Debug($"Received {bytesList.Count} bytes.");
             return new SerializedData() {data = bytesList.ToArray()};
         }
     }

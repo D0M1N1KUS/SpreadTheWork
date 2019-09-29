@@ -52,7 +52,7 @@ namespace Client.ClientBase
             
             _serverConnector.serverNetworkStream
                 .Write(serializedData.data,0,serializedData.data.Length);
-            Logger.Info($"Sent {serializedData.data.Length} bytes.");
+            Logger.Debug($"Sent {serializedData.data.Length} bytes.");
         }
 
         public Task<object> ReceiveTask()
@@ -68,13 +68,6 @@ namespace Client.ClientBase
             var buffer = new byte[Core.CommonData.NETWORK_BUFFER_SIZE];
             var bytesRead = 0;
 
-//            while (_binaryReader.)
-//            {
-//                bytesRead = _binaryReader.Read(buffer, 0, buffer.Length);
-//                for (var i = 0; i < bytesRead; i++)
-//                    bytesList.Add(buffer[i]);
-//            } 
-
             bytesRead = _serverConnector.serverNetworkStream.Read(buffer, 0, buffer.Length);
             var infoMessage = (MessageInfo)ObjectSerializer.Deserialize(buffer);
 
@@ -85,7 +78,7 @@ namespace Client.ClientBase
                     bytesList.Add(buffer[j]);
             }
 
-            Logger.Info($"Received {bytesList.Count} bytes.");
+            Logger.Debug($"Received {bytesList.Count} bytes.");
             return ObjectSerializer.Deserialize(bytesList.ToArray());
         }
     }

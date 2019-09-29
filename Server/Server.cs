@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using NLog;
+using Server.Helpers;
 using Server.ServerBase;
 using Server.ObjectSendingTest;
 
@@ -9,6 +10,8 @@ namespace Server
     internal class Server
     {
         public static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
+        private static Args _args;
         
         public static void Main(string[] args)
         {
@@ -20,9 +23,9 @@ namespace Server
             NLog.LogManager.Configuration = config;
             
             Logger.Info("Server");
-//            var clientListeners = new ClientListener(1234);
-//            var clientConnector = new ClientConnector();
-//            clientListeners.AddConnectionCallback(clientConnector.ConnectClient);
+            
+            readArgs(args);
+            
             var clientCommunication = new ClientCommunication();
             while(clientCommunication.ConnectedClients.Count == 0)
                 Thread.Sleep(100);
@@ -40,7 +43,13 @@ namespace Server
             Logger.Info("Exitting...");
             Console.ReadLine();
         }
-        
-       
+
+        private static bool readArgs(string[] args)
+        {
+            _args = new Args(args);
+//            if(!_args.InitializetionSucceeded)
+//                Logger.Error($"Error in provided arguments!");
+            return _args.InitializationSucceeded;
+        }
     }
 }
