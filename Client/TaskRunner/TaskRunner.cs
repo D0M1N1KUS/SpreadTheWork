@@ -16,12 +16,14 @@ namespace Client.TaskRunner
         
         private ServerCommunication _serverCommunication;
 
+        private string _assemblyLocation;    
         private Assembly _targetAssembly;
 
         private object _calculationObject;
 
-        public TaskRunner(ServerCommunication serverCommunication)
+        public TaskRunner(ServerCommunication serverCommunication, string assemblyLocation)
         {
+            _assemblyLocation = assemblyLocation;
             _serverCommunication = serverCommunication;
         }
 
@@ -64,8 +66,8 @@ namespace Client.TaskRunner
                     Logger.Info($"Done running method {runMethod.memberName}");
                     break;
                 case LoadAssembly loadAssembly:
-                    Logger.Debug($"Loading assembly {loadAssembly.Path}");
-                    loadAssemblyFromFile(loadAssembly);
+                    Logger.Debug($"Loading assembly {_assemblyLocation}");
+                    _targetAssembly = Assembly.LoadFile(_assemblyLocation);
                     _serverCommunication.Send(new SuccessResponse()
                     {
                         message = $"Successfully loaded assembly from path {_targetAssembly.FullName}"

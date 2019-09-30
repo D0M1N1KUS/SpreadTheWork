@@ -37,7 +37,7 @@ namespace Server
                 var type = _args.LoadedAssembly.GetType($"{_args.LoadedAssembly.GetName().Name}.Algorithm");
                 var obj = Activator.CreateInstance(type);
                 var algorithm = (IStartAlgorithm) obj;
-                taskRunner.LoadAssembly(@"D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\SampleAssembly\bin\Debug\SampleAssembly.dll");
+                taskRunner.LoadAssembly($"{_args.LoadedAssembly.GetName().Name}.dll");
 
                 algorithm.Run(taskRunner);
                 

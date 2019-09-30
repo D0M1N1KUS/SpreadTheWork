@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Reflection;
 using NLog;
 using System.Runtime.Remoting;
 using Client.ClientBase;
@@ -9,6 +10,8 @@ namespace Client
     internal class Client
     {
         private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
+        private static string _assemblyLocation;
         
         public static void Main(string[] args)
         {
@@ -19,6 +22,8 @@ namespace Client
             config.AddRule(LogLevel.Debug, LogLevel.Fatal, logfile);
             NLog.LogManager.Configuration = config;
 
+            _assemblyLocation = $"{Assembly.GetExecutingAssembly().Location.Replace("Client.exe", String.Empty)}{args[0]}";
+            
             try
             {
                 runClient();
@@ -43,21 +48,10 @@ namespace Client
             Console.WriteLine("Server Port:");
             var port = int.Parse(Console.ReadLine() ?? throw new Exception("Unable to parse server port!"));
 
-//            var connector = new Connector();
-//            var networkStream = connector.ConnectToServer(ip, port);
             var serverCommunication = new ServerCommunication(ip, port);
-            var taskRunner = new TaskRunner.TaskRunner(serverCommunication);
+            var taskRunner = new TaskRunner.TaskRunner(serverCommunication, _assemblyLocation);
             taskRunner.BeginReceivingTasks();
 
-//            Logger.Info("Starting test.");
-//            try
-//            {
-//                ObjectSendingTest.ObjectSendingTest.TryToReceiveObjects(serverCommunication);
-//            }
-//            catch (Exception e)
-//            {
-//                Logger.Error(e);
-//            }
 
             Logger.Info("Exitting...");
             Console.ReadLine();
