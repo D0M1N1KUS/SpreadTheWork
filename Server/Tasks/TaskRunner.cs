@@ -32,12 +32,12 @@ namespace Server.TaskScheduling
         {
             Logger.Info($"Instantiating object of type {type.Name} in clients...");
             var instantiateObject = new InstantiateObject() { type = type, args = args };
-            var sentInstantiationRequests = SendInstantiationRequests(instantiateObject);
-            WaitForSendTasksToFinish(sentInstantiationRequests);
-
-            var receivedResponses = ReceiveResponses();
-            WaitForClientsToRespond(receivedResponses);
-            CheckIfInstantiationsSucceeded(receivedResponses);
+            var instantiationResponses = SendInstantiationRequests(instantiateObject);
+//            WaitForSendTasksToFinish(sentInstantiationRequests);
+//
+//            var receivedResponses = ReceiveResponses();
+//            WaitForClientsToRespond(receivedResponses);
+            CheckIfInstantiationsSucceeded(instantiationResponses);
             Logger.Info("Instantiation of objects succeeded!");
         }
         
@@ -82,26 +82,26 @@ namespace Server.TaskScheduling
                 throw new Exception("Args not initialized properly!");
             //Assembly needs to be in the same directory as executable
             //var assemblyPath = args.LoadedAssembly.GetName().Name;
-            Logger.Debug("Getting responses from clients...");
-            var responseTasks = ReceiveResponses();
-            Logger.Debug("Sending instantiation requests...");
-            var sendTasks = SendInstantiationRequests(new LoadAssembly() { Path = path });
-            Logger.Debug("Waiting for send tasks to finish...");
-            WaitForSendTasksToFinish(sendTasks);
-
-            Logger.Debug("Waiting for clients to respond...");
-            WaitForClientsToRespond(responseTasks);
-            Logger.Debug("Checking respones from clients...");
-            CheckIfInstantiationsSucceeded(responseTasks);
+//            Logger.Debug("Getting responses from clients...");
+//            var responseTasks = ReceiveResponses();
+//            Logger.Debug("Sending instantiation requests...");
+            var responses = SendInstantiationRequests(new LoadAssembly() { Path = path });
+//            Logger.Debug("Waiting for send tasks to finish...");
+//            WaitForSendTasksToFinish(sendTasks);
+//
+//            Logger.Debug("Waiting for clients to respond...");
+//            WaitForClientsToRespond(responseTasks);
+//            Logger.Debug("Checking respones from clients...");
+            CheckIfInstantiationsSucceeded(responses);
             Logger.Info("Instantiation of assembies succeeded!");
         }
 
-        private static void CheckIfInstantiationsSucceeded(List<Task<ISerializedData>> receivedResponses)
+        private static void CheckIfInstantiationsSucceeded(List<ISerializedData> receivedResponses)
         {
             var failedClients = 0;
             foreach (var response in receivedResponses)
             {
-                if (!InstatntiationResponse.InstantiationSucceeded(response.Result))
+                if (!InstatntiationResponse.InstantiationSucceeded(response))
                     failedClients++;
             }
 
@@ -123,21 +123,24 @@ namespace Server.TaskScheduling
                 task.Wait(10000);
         }
 
-        private List<Task> SendInstantiationRequests(object instantiateObject)
+        private List<ISerializedData> SendInstantiationRequests(object instantiateObject)
         {
-            var sentTasksList = new List<Task>();
+            var responses = new List<ISerializedData>();
             foreach (var client in _clientCommunication.ConnectedClients)
             {
-                var task = _clientCommunication.SendTask(new Message()
+                Logger.Debug("Sending instantiation request...");
+                _clientCommunication.Send(new Message()
                 {
                     DestinationClient = client.Value.Id,
                     SerializedData = ObjectSerializer.Serialize(instantiateObject)
                 });
-                task.Start();
-                sentTasksList.Add(task);
+                Logger.Debug("Waiting for response...");
+                var response = _clientCommunication.Receive(client.Value.Id);
+                Logger.Debug("Received response!");
+                responses.Add(response);
             }
 
-            return sentTasksList;
+            return responses;
         }
 
         private List<Task<ISerializedData>> ReceiveResponses()

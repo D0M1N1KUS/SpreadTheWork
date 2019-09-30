@@ -4,6 +4,8 @@ using NLog;
 using Server.Helpers;
 using Server.ServerBase;
 using Server.ObjectSendingTest;
+using Server.TaskScheduling;
+using ServerAssemblyInterface.Interfaces;
 
 namespace Server
 {
@@ -23,22 +25,34 @@ namespace Server
             NLog.LogManager.Configuration = config;
             
             Logger.Info("Server");
-            
-            readArgs(args);
-            
-            var clientCommunication = new ClientCommunication();
-            while(clientCommunication.ConnectedClients.Count == 0)
-                Thread.Sleep(100);
-            
-            Logger.Info("Starting test.");
             try
             {
-                ObjectSendingTest.ObjectSendingTest.TryToSendObjects(clientCommunication);
+                if (!readArgs(args))
+                    throw new Exception("Error in args!");
+
+                var clientCommunication = WaitForClients();
+
+                var taskRunner = new TaskRunner(clientCommunication, _args);
+
+                var type = _args.LoadedAssembly.GetType($"{_args.LoadedAssembly.GetName().Name}.Algorithm");
+                var obj = Activator.CreateInstance(type);
+                var algorithm = (IStartAlgorithm) obj;
+
+                algorithm.Run(taskRunner);
             }
             catch (Exception e)
             {
                 Logger.Error(e);
             }
+//            Logger.Info("Starting test.");
+//            try
+//            {
+//                ObjectSendingTest.ObjectSendingTest.TryToSendObjects(clientCommunication);
+//            }
+//            catch (Exception e)
+//            {
+//                Logger.Error(e);
+//            }
             
             Logger.Info("Exitting...");
             Console.ReadLine();
@@ -50,6 +64,16 @@ namespace Server
 //            if(!_args.InitializetionSucceeded)
 //                Logger.Error($"Error in provided arguments!");
             return _args.InitializationSucceeded;
+        }
+
+        private static ClientCommunication WaitForClients()
+        {
+            var clientCommunictaion = new ClientCommunication();
+            Logger.Info($"Waiting for {_args.ExpectedNumberOfClients} clients...");
+            while(clientCommunictaion.ConnectedClients.Count < _args.ExpectedNumberOfClients)
+                Thread.Sleep(100);
+            Logger.Info("All clients connected!");
+            return clientCommunictaion;
         }
     }
 }

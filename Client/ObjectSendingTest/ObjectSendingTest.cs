@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Client.ClientBase;
 using Core.DataClasses;
@@ -14,12 +15,18 @@ namespace Client.ObjectSendingTest
             logger = NLog.LogManager.GetCurrentClassLogger();
 
             logger.Info("Waiting for list...");
-            var receivedObject = checkObject(c.Receive(), 10);
+            var receiveTask = c.ReceiveTask();
+            receiveTask.Wait();
+            var receivedObject = checkObject(receiveTask.Result, 10);
+            Thread.Sleep(5000);
             logger.Info("Sending list back...");
             c.Send(receivedObject).Wait(10000);
             logger.Info("List sent! Wating for next list...");
-            
-            receivedObject = checkObject(c.Receive(), 1010);
+
+            receiveTask = c.ReceiveTask();
+            receiveTask.Wait();
+            receivedObject = checkObject(receiveTask.Result, 1010);
+            Thread.Sleep(5000);
             logger.Info("Sending list back...");
             c.Send(receivedObject).Wait(10000);
             logger.Info("Done! Test succeeded!");

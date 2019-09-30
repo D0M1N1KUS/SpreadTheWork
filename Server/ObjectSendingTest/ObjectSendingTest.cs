@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using Core.DataClasses;
 using Server.Interfaces;
 using Server.ObjectSender;
@@ -32,9 +33,9 @@ namespace Server.ObjectSendingTest
             logger.Info("Sending list...");
             c.Send(message);
             logger.Info("List sent. Wating for list...");
-            var receiveTask = c.ReceiveTask(destinationClient);
-            receiveTask.Wait(10000);
-            checkResponse(receiveTask.Result, logger);
+            //Thread.Sleep(1000);
+            var result = c.Receive(destinationClient);
+            checkResponse(result, logger);
             logger.Info("Received list.");
             
             for (var i = 1; i <= 1000; i++)
@@ -49,12 +50,12 @@ namespace Server.ObjectSendingTest
             };
             
             logger.Info("Sending list...");
-            c.SendTask(message).Wait(10000);
+            c.Send(message);
             
             logger.Info("List sent. Wating for list...");
-            receiveTask = c.ReceiveTask(destinationClient);
-            receiveTask.Wait(10000);
-            checkResponse(receiveTask.Result, logger);
+            //Thread.Sleep(1000);
+            result = c.Receive(destinationClient);
+            checkResponse(result, logger);
             logger.Info("Received list.");
         }
 

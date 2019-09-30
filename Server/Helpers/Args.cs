@@ -21,7 +21,7 @@ namespace Server.Helpers
         private string[] cmdArgs;
         private Dictionary<string, bool> foundArgs = new Dictionary<string, bool>()
             {{"-a", false}, {"-args", false}, {"-argfile", false }, {"-c", false } };
-        private List<string> necessaryArgs = new List<string>()
+        private readonly List<string> necessaryArgs = new List<string>()
         {
             "-a", "-c"
         };
@@ -99,7 +99,7 @@ namespace Server.Helpers
             switch (cmdArgs[i])
             {
                 case "-a":
-                    LoadedAssembly = Assembly.Load(cmdArgs[i + 1]);
+                    LoadedAssembly = Assembly.LoadFile(cmdArgs[i + 1]);
                     return i + 1;
                 case "-args":
                     readParameterArgs(i+1);
