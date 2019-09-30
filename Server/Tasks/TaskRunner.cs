@@ -101,7 +101,7 @@ namespace Server.TaskScheduling
             var failedClients = 0;
             foreach (var response in receivedResponses)
             {
-                if (!InstatntiationResponse.InstantiationSucceeded(response))
+                if (!InstatntiationResponse.InstantiationSucceeded(ObjectSerializer.Deserialize(response)))
                     failedClients++;
             }
 
@@ -109,19 +109,19 @@ namespace Server.TaskScheduling
                 throw new Exception("At least one client failed to initialize.");
         }
 
-        private static void WaitForSendTasksToFinish(List<Task> sendTasks)
-        {
-            foreach (var task in sendTasks)
-            {
-                task.Wait(10000);
-            }
-        }
-
-        private static void WaitForClientsToRespond(List<Task<ISerializedData>> receivedResponses)
-        {
-            foreach (var task in receivedResponses)
-                task.Wait(10000);
-        }
+//        private static void WaitForSendTasksToFinish(List<Task> sendTasks)
+//        {
+//            foreach (var task in sendTasks)
+//            {
+//                task.Wait(10000);
+//            }
+//        }
+//
+//        private static void WaitForClientsToRespond(List<Task<ISerializedData>> receivedResponses)
+//        {
+//            foreach (var task in receivedResponses)
+//                task.Wait(10000);
+//        }
 
         private List<ISerializedData> SendInstantiationRequests(object instantiateObject)
         {
@@ -143,28 +143,28 @@ namespace Server.TaskScheduling
             return responses;
         }
 
-        private List<Task<ISerializedData>> ReceiveResponses()
-        {
-            var receiveTasks = new List<Task<ISerializedData>>();
-            foreach (var client in _clientCommunication.ConnectedClients)
-            {
-                var task = _clientCommunication.ReceiveTask(client.Key);
-                task.Start();
-                receiveTasks.Add(task);
-            }
-            return receiveTasks;
-        }
-
-        private bool instantiationSucceeded(int clientId)
-        {
-            var task = _clientCommunication.ReceiveTask(clientId);
-            task.Wait();
-
-            var succeeded = InstatntiationResponse.InstantiationSucceeded(ObjectSerializer.Deserialize(task.Result));
-            if (!succeeded)
-                Logger.Error(InstatntiationResponse.Exception);
-            return succeeded;
-        }
+//        private List<Task<ISerializedData>> ReceiveResponses()
+//        {
+//            var receiveTasks = new List<Task<ISerializedData>>();
+//            foreach (var client in _clientCommunication.ConnectedClients)
+//            {
+//                var task = _clientCommunication.ReceiveTask(client.Key);
+//                task.Start();
+//                receiveTasks.Add(task);
+//            }
+//            return receiveTasks;
+//        }
+//
+//        private bool instantiationSucceeded(int clientId)
+//        {
+//            var task = _clientCommunication.ReceiveTask(clientId);
+//            task.Wait();
+//
+//            var succeeded = InstatntiationResponse.InstantiationSucceeded(ObjectSerializer.Deserialize(task.Result));
+//            if (!succeeded)
+//                Logger.Error(InstatntiationResponse.Exception);
+//            return succeeded;
+//        }
     }
         
 }

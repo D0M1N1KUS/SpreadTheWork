@@ -120,6 +120,7 @@ namespace Server.Helpers
         {
             if(!int.TryParse(cmdArgs[i], out var n))
                 throw new Exception($"Provided parameter is not a number! \"{cmdArgs[i]}\"");
+            ExpectedNumberOfClients = n;
         }
 
         private void checkArgfilePath(int i)

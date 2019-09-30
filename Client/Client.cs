@@ -46,16 +46,18 @@ namespace Client
 //            var connector = new Connector();
 //            var networkStream = connector.ConnectToServer(ip, port);
             var serverCommunication = new ServerCommunication(ip, port);
+            var taskRunner = new TaskRunner.TaskRunner(serverCommunication);
+            taskRunner.BeginReceivingTasks();
 
-            Logger.Info("Starting test.");
-            try
-            {
-                ObjectSendingTest.ObjectSendingTest.TryToReceiveObjects(serverCommunication);
-            }
-            catch (Exception e)
-            {
-                Logger.Error(e);
-            }
+//            Logger.Info("Starting test.");
+//            try
+//            {
+//                ObjectSendingTest.ObjectSendingTest.TryToReceiveObjects(serverCommunication);
+//            }
+//            catch (Exception e)
+//            {
+//                Logger.Error(e);
+//            }
         }
     }
 }

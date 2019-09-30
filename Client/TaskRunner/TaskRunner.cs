@@ -85,7 +85,10 @@ namespace Client.TaskRunner
         {
             var typeFromAssembly =
                 _targetAssembly.GetType(_targetAssembly.GetName().Name + type.Name);
-            calculationObject = Activator.CreateInstance(typeFromAssembly, args);
+            if (args != null)
+                calculationObject = Activator.CreateInstance(typeFromAssembly, args);
+            else
+                calculationObject = Activator.CreateInstance(typeFromAssembly);
         }
 
         private object runMethodFromAssembly(RunMethod runMethod)

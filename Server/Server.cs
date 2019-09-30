@@ -37,6 +37,7 @@ namespace Server
                 var type = _args.LoadedAssembly.GetType($"{_args.LoadedAssembly.GetName().Name}.Algorithm");
                 var obj = Activator.CreateInstance(type);
                 var algorithm = (IStartAlgorithm) obj;
+                taskRunner.LoadAssembly(@"D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\SampleAssembly\bin\Debug\SampleAssembly.dll");
 
                 algorithm.Run(taskRunner);
             }
@@ -61,8 +62,6 @@ namespace Server
         private static bool readArgs(string[] args)
         {
             _args = new Args(args);
-//            if(!_args.InitializetionSucceeded)
-//                Logger.Error($"Error in provided arguments!");
             return _args.InitializationSucceeded;
         }
 
