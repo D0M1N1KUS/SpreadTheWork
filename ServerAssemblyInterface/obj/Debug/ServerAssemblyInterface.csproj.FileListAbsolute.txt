@@ -1,0 +1,12 @@
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\ServerAssemblyInterface\bin\Debug\ServerAssemblyInterface.dll
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\ServerAssemblyInterface\bin\Debug\ServerAssemblyInterface.pdb
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\ServerAssemblyInterface\obj\Debug\ServerAssemblyInterface.csprojAssemblyReference.cache
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\ServerAssemblyInterface\obj\Debug\ServerAssemblyInterface.csproj.CoreCompileInputs.cache
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\ServerAssemblyInterface\obj\Debug\ServerAssemblyInterface.dll
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\ServerAssemblyInterface\obj\Debug\ServerAssemblyInterface.pdb
+C:\Users\dpreugsz\Documents\Visual Studio 2017\Projects\SpreadTheWork\ServerAssemblyInterface\bin\Debug\ServerAssemblyInterface.dll
+C:\Users\dpreugsz\Documents\Visual Studio 2017\Projects\SpreadTheWork\ServerAssemblyInterface\bin\Debug\ServerAssemblyInterface.pdb
+C:\Users\dpreugsz\Documents\Visual Studio 2017\Projects\SpreadTheWork\ServerAssemblyInterface\obj\Debug\ServerAssemblyInterface.csprojAssemblyReference.cache
+C:\Users\dpreugsz\Documents\Visual Studio 2017\Projects\SpreadTheWork\ServerAssemblyInterface\obj\Debug\ServerAssemblyInterface.csproj.CoreCompileInputs.cache
+C:\Users\dpreugsz\Documents\Visual Studio 2017\Projects\SpreadTheWork\ServerAssemblyInterface\obj\Debug\ServerAssemblyInterface.dll
+C:\Users\dpreugsz\Documents\Visual Studio 2017\Projects\SpreadTheWork\ServerAssemblyInterface\obj\Debug\ServerAssemblyInterface.pdb
