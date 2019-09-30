@@ -55,6 +55,7 @@
         <Compile Include="ClientBase\ServerCommunication.cs" />
         <Compile Include="ObjectSendingTest\ObjectSendingTest.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="TaskRunner\TaskRunner.cs" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Core\Core.csproj">

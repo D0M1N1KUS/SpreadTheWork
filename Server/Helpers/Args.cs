@@ -20,10 +20,10 @@ namespace Server.Helpers
 
         private string[] cmdArgs;
         private Dictionary<string, bool> foundArgs = new Dictionary<string, bool>()
-            {{"-a", false}};
-        private List<string> knownArgs = new List<string>()
+            {{"-a", false}, {"-args", false}, {"-argfile", false }, {"-c", false } };
+        private List<string> necessaryArgs = new List<string>()
         {
-            "-a", "-args", "-argfile", "-c"
+            "-a", "-c"
         };
 
         public Assembly LoadedAssembly { get; private set; } = null;
@@ -83,9 +83,9 @@ namespace Server.Helpers
             }
 
             var allNecessaryArgsPresent = true;
-            foreach (var arg in foundArgs)
+            foreach (var arg in necessaryArgs)
             {
-                allNecessaryArgsPresent = allNecessaryArgsPresent && arg.Value;
+                allNecessaryArgsPresent = allNecessaryArgsPresent && foundArgs[arg];
             }
             
             return noDoubleArgsPresent && allNecessaryArgsPresent;
@@ -118,8 +118,8 @@ namespace Server.Helpers
 
         private void readExpectedNumberOfClients(int i)
         {
-            if(int.TryParse(cmdArgs[i], out var n))
-                
+            if(!int.TryParse(cmdArgs[i], out var n))
+                throw new Exception($"Provided parameter is not a number! \"{cmdArgs[i]}\"");
         }
 
         private void checkArgfilePath(int i)

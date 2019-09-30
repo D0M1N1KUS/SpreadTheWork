@@ -23,17 +23,14 @@ namespace Server.ServerBase
         private int currentPort = DEFAULT_CLIENT_START_PORT;
         private int currentClientId = 1;
 
-        private ObjectSerializer _objectSerializer;
-
         private event AddClientCallback addClientEvent;
 
         private object clientConnectorLock = new object();
         
-        public delegate void AddClientCallback(int clientId, NetworkStream networkStream);
+        public delegate void AddClientCallback(int clientId, Client client);
 
         public ClientConnector(AddClientCallback addClientCallback)
         {
-            _objectSerializer = new ObjectSerializer();
             addClientEvent = addClientCallback;
         }
         
@@ -78,13 +75,12 @@ namespace Server.ServerBase
             }
 
 
-            addClientEvent?.Invoke(clientId, clientStream);
+            addClientEvent?.Invoke(clientId, new Client(){Id = clientId, NetworkStream = clientStream, 
+                NumberOfThreads = connectionResponse.Threads, Port = connectionResponse.port});
         }
 
         private static void waitForClientResponse(NetworkStream clientStream, int clientId, out byte[] buffer)
         {
-            //var currentClient = new NetworkStream(clientStream, true) {ReadTimeout = 10000};
-
             Logger.Debug($"Accept message sent to client {clientId}. Waiting for response...");
             buffer = new byte[1024];
             var bytesRead = clientStream.Read(buffer, 0, buffer.Length);

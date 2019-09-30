@@ -9,3 +9,5 @@ D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Server\bin\Debug
 D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Server\bin\Debug\Core.pdb
 D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Server\bin\Debug\NLog.xml
 D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Server\obj\Debug\Server.csproj.CopyComplete
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Server\bin\Debug\ServerAssemblyInterface.dll
+D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Server\bin\Debug\ServerAssemblyInterface.pdb

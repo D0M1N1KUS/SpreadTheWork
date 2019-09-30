@@ -32,7 +32,7 @@ namespace Server.ObjectSendingTest
             logger.Info("Sending list...");
             c.Send(message);
             logger.Info("List sent. Wating for list...");
-            var receiveTask = c.Receive(destinationClient);
+            var receiveTask = c.ReceiveTask(destinationClient);
             receiveTask.Wait(10000);
             checkResponse(receiveTask.Result, logger);
             logger.Info("Received list.");
@@ -49,10 +49,10 @@ namespace Server.ObjectSendingTest
             };
             
             logger.Info("Sending list...");
-            c.Send(message).Wait(10000);
+            c.SendTask(message).Wait(10000);
             
             logger.Info("List sent. Wating for list...");
-            receiveTask = c.Receive(destinationClient);
+            receiveTask = c.ReceiveTask(destinationClient);
             receiveTask.Wait(10000);
             checkResponse(receiveTask.Result, logger);
             logger.Info("Received list.");

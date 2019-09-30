@@ -51,10 +51,17 @@
         <Compile Include="CommonData.cs" />
         <Compile Include="DataClasses\ConnectionResponse.cs" />
         <Compile Include="DataClasses\EncapsulatedList.cs" />
+        <Compile Include="DataClasses\ErrorResponse.cs" />
+        <Compile Include="DataClasses\InstantiateObject.cs" />
+        <Compile Include="DataClasses\LoadAssembly.cs" />
         <Compile Include="DataClasses\Message.cs" />
         <Compile Include="DataClasses\MessageInfo.cs" />
+        <Compile Include="DataClasses\MethodResponse.cs" />
         <Compile Include="DataClasses\PingStruct.cs" />
+        <Compile Include="DataClasses\RunMethod.cs" />
         <Compile Include="DataClasses\SerializedData.cs" />
+        <Compile Include="DataClasses\Shutdown.cs" />
+        <Compile Include="DataClasses\SuccessResponse.cs" />
         <Compile Include="Interfaces\IMessage.cs" />
         <Compile Include="Interfaces\ISerializedData.cs" />
         <Compile Include="Interfaces\ISpreadable.cs" />

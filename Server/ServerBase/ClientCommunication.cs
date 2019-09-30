@@ -22,11 +22,7 @@ namespace Server.ServerBase
 
         private ConcurrentDictionary<int, BinaryReader> BinaryReaders;
 
-        public ConcurrentDictionary<int, NetworkStream> ConnectedClients { get; private set; }
-        private ConcurrentDictionary<int, Thread> clientThreads;
-
-        private ConcurrentQueue<IMessage> outgoingMessagesQueue;
-        private ConcurrentQueue<IMessage> incommingMessagesQueue;
+        public ConcurrentDictionary<int, Client> ConnectedClients { get; private set; }
 
         /// <summary>
         /// Initializes basic server-client communication and listener classes
@@ -38,32 +34,32 @@ namespace Server.ServerBase
             _listener = listener ?? new ClientListener(DEFAULT_LISTENING_PORT);
             _connector = connector ?? new ClientConnector(addClientCallback);
             _listener.AddConnectionCallback(_connector.ConnectClient);
-            ConnectedClients = new ConcurrentDictionary<int, NetworkStream>();
+            ConnectedClients = new ConcurrentDictionary<int, Client>();
             BinaryReaders = new ConcurrentDictionary<int, BinaryReader>();
         }
 
-        private void addClientCallback(int clientId, NetworkStream networkStream)
+        private void addClientCallback(int clientId, Client client)
         {
             do
             {
                 Logger.Debug($"Trying to add client with id {clientId}.");
-            } while (!ConnectedClients.TryAdd(clientId, networkStream));
+            } while (!ConnectedClients.TryAdd(clientId, client));
             Logger.Info($"Client with id {clientId} added.");
 
             do
             {
                 Thread.Sleep(10);
-            } while (!BinaryReaders.TryAdd(clientId, new BinaryReader(networkStream)));
+            } while (!BinaryReaders.TryAdd(clientId, new BinaryReader(client.NetworkStream)));
         }
 
-        public Task Send(IMessage message)
+        public Task SendTask(IMessage message)
         {
-            var task = new Task(() => send(message));
+            var task = new Task(() => Send(message));
             task.Start();
             return task;
         }
         
-        private void send(IMessage message)
+        public void Send(IMessage message)
         {
             if (!ConnectedClients.ContainsKey(message.DestinationClient))
             {
@@ -73,29 +69,29 @@ namespace Server.ServerBase
             
             var messageInfoSerialized = ObjectSerializer
                 .Serialize(new MessageInfo(){LengthInBytes = message.SerializedData.data.Length});
-            ConnectedClients[message.DestinationClient]
+            ConnectedClients[message.DestinationClient].NetworkStream
                 .Write(messageInfoSerialized.data, 0, messageInfoSerialized.data.Length);
             
-            ConnectedClients[message.DestinationClient]
+            ConnectedClients[message.DestinationClient].NetworkStream
                 .Write(message.SerializedData.data,0,message.SerializedData.data.Length);
             Logger.Debug($"Sent {message.SerializedData.data.Length} bytes.");
         }
 
-        public Task<ISerializedData> Receive(int clientId)
+        public Task<ISerializedData> ReceiveTask(int clientId)
         {
-            var task = new Task<ISerializedData>(() => receive(clientId));
+            var task = new Task<ISerializedData>(() => Receive(clientId));
             task.Start();
 
             return task;
         }
 
-        private ISerializedData receive(int clientId)
+        public ISerializedData Receive(int clientId)
         {
             var bytesList = new List<byte>();
             var buffer = new byte[Core.CommonData.NETWORK_BUFFER_SIZE];
             var bytesRead = 0;
 
-            var clientNetworkStream = ConnectedClients[clientId];
+            var clientNetworkStream = ConnectedClients[clientId].NetworkStream;
             
             bytesRead = clientNetworkStream.Read(buffer, 0, buffer.Length);
             var infoMessage = (MessageInfo)ObjectSerializer.Deserialize(buffer);
@@ -103,7 +99,7 @@ namespace Server.ServerBase
 
             for(var i = 0; i <= infoMessage.LengthInBytes / Core.CommonData.NETWORK_BUFFER_SIZE; i++)
             {
-                bytesRead = ConnectedClients[clientId].Read(buffer, 0, buffer.Length);
+                bytesRead = ConnectedClients[clientId].NetworkStream.Read(buffer, 0, buffer.Length);
                 for(var j = 0; j < bytesRead; j++)
                     bytesList.Add(buffer[j]);
             }
