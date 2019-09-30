@@ -1,73 +1,8 @@
-2019-09-30 23:53:52.1185|INFO|Client.Client|Client
-2019-09-30 23:53:57.1615|DEBUG|Client.ClientBase.Connector|Server responded.
-2019-09-30 23:53:57.1615|DEBUG|Client.ClientBase.Connector|Server accepted connection on port 3022. Id of client is 1.
-2019-09-30 23:53:57.1615|DEBUG|Client.ClientBase.Connector|Connecting to server on port 3022...
-2019-09-30 23:53:57.1615|DEBUG|Client.ClientBase.Connector|Sending connection response to server.
-2019-09-30 23:53:57.1615|INFO|Client.ClientBase.Connector|Connection established!
-2019-09-30 23:54:03.4233|DEBUG|Client.ClientBase.Connector|Server responded.
-2019-09-30 23:54:03.4273|DEBUG|Client.ClientBase.Connector|Server accepted connection on port 3023. Id of client is 2.
-2019-09-30 23:54:03.4273|DEBUG|Client.ClientBase.Connector|Connecting to server on port 3023...
-2019-09-30 23:54:03.4273|DEBUG|Client.ClientBase.Connector|Sending connection response to server.
-2019-09-30 23:54:03.4273|INFO|Client.ClientBase.Connector|Connection established!
-2019-09-30 23:54:03.4764|DEBUG|Client.ClientBase.ServerCommunication|Received 156 bytes.
-2019-09-30 23:54:03.4764|DEBUG|Client.TaskRunner.TaskRunner|Loading assembly D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\bin\Debug\SampleAssembly.dll
-2019-09-30 23:54:03.4764|DEBUG|Client.TaskRunner.TaskRunner|Done loading assembly!
-2019-09-30 23:54:03.4894|DEBUG|Client.ClientBase.ServerCommunication|Sent 252 bytes.
-2019-09-30 23:54:03.4954|DEBUG|Client.ClientBase.ServerCommunication|Received 156 bytes.
-2019-09-30 23:54:03.4954|DEBUG|Client.TaskRunner.TaskRunner|Loading assembly D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\bin\Debug\SampleAssembly.dll
-2019-09-30 23:54:03.5074|DEBUG|Client.TaskRunner.TaskRunner|Done loading assembly!
-2019-09-30 23:54:03.5074|DEBUG|Client.ClientBase.ServerCommunication|Sent 252 bytes.
-2019-09-30 23:54:03.5254|DEBUG|Client.ClientBase.ServerCommunication|Received 360 bytes.
-2019-09-30 23:54:03.5254|DEBUG|Client.TaskRunner.TaskRunner|Instantiating object Sorter...
-2019-09-30 23:54:03.5254|DEBUG|Client.TaskRunner.TaskRunner|Done instantiating!
-2019-09-30 23:54:03.5254|DEBUG|Client.ClientBase.ServerCommunication|Sent 204 bytes.
-2019-09-30 23:54:03.5364|DEBUG|Client.ClientBase.ServerCommunication|Received 360 bytes.
-2019-09-30 23:54:03.5364|DEBUG|Client.TaskRunner.TaskRunner|Instantiating object Sorter...
-2019-09-30 23:54:03.5364|DEBUG|Client.TaskRunner.TaskRunner|Done instantiating!
-2019-09-30 23:54:03.5364|DEBUG|Client.ClientBase.ServerCommunication|Sent 204 bytes.
-2019-09-30 23:54:03.5524|DEBUG|Client.ClientBase.ServerCommunication|Received 649 bytes.
-2019-09-30 23:54:03.5524|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
-2019-09-30 23:54:03.5524|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
-2019-09-30 23:54:03.5524|DEBUG|Client.ClientBase.ServerCommunication|Sent 392 bytes.
-2019-09-30 23:54:03.5544|DEBUG|Client.ClientBase.ServerCommunication|Received 713 bytes.
-2019-09-30 23:54:03.5684|DEBUG|Client.ClientBase.ServerCommunication|Received 713 bytes.
-2019-09-30 23:54:03.5684|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
-2019-09-30 23:54:03.5684|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
-2019-09-30 23:54:03.5684|DEBUG|Client.ClientBase.ServerCommunication|Sent 456 bytes.
-2019-09-30 23:54:03.5684|DEBUG|Client.ClientBase.ServerCommunication|Received 841 bytes.
-2019-09-30 23:54:03.5684|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
-2019-09-30 23:54:03.5835|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
-2019-09-30 23:54:03.5835|DEBUG|Client.ClientBase.ServerCommunication|Sent 584 bytes.
-2019-09-30 23:54:03.5835|DEBUG|Client.ClientBase.ServerCommunication|Received 841 bytes.
-2019-09-30 23:54:03.5835|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
-2019-09-30 23:54:03.5835|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
-2019-09-30 23:54:03.5835|DEBUG|Client.ClientBase.ServerCommunication|Sent 584 bytes.
-2019-09-30 23:54:03.5835|DEBUG|Client.ClientBase.ServerCommunication|Received 841 bytes.
-2019-09-30 23:54:03.6005|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
-2019-09-30 23:54:03.6005|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
-2019-09-30 23:54:03.6005|DEBUG|Client.ClientBase.ServerCommunication|Sent 584 bytes.
-2019-09-30 23:54:03.6005|DEBUG|Client.ClientBase.ServerCommunication|Received 841 bytes.
-2019-09-30 23:54:03.6005|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
-2019-09-30 23:54:03.6005|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
-2019-09-30 23:54:03.6005|DEBUG|Client.ClientBase.ServerCommunication|Sent 584 bytes.
-2019-09-30 23:54:03.6175|DEBUG|Client.ClientBase.ServerCommunication|Received 841 bytes.
-2019-09-30 23:54:03.6175|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
-2019-09-30 23:54:03.6175|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
-2019-09-30 23:54:03.6175|DEBUG|Client.ClientBase.ServerCommunication|Sent 584 bytes.
-2019-09-30 23:54:03.6175|DEBUG|Client.ClientBase.ServerCommunication|Received 841 bytes.
-2019-09-30 23:54:03.6175|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
-2019-09-30 23:54:03.6315|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
-2019-09-30 23:54:03.6315|DEBUG|Client.ClientBase.ServerCommunication|Sent 584 bytes.
-2019-09-30 23:54:03.6315|DEBUG|Client.ClientBase.ServerCommunication|Received 649 bytes.
-2019-09-30 23:54:03.6315|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
-2019-09-30 23:54:03.6315|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
-2019-09-30 23:54:03.6315|DEBUG|Client.ClientBase.ServerCommunication|Sent 392 bytes.
-2019-09-30 23:54:03.5694|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
-2019-09-30 23:54:03.7096|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
-2019-09-30 23:54:03.7096|DEBUG|Client.ClientBase.ServerCommunication|Sent 456 bytes.
-2019-09-30 23:54:03.8056|DEBUG|Client.ClientBase.ServerCommunication|Received 122 bytes.
-2019-09-30 23:54:03.8076|DEBUG|Client.ClientBase.ServerCommunication|Received 122 bytes.
-2019-09-30 23:54:03.8076|INFO|Client.TaskRunner.TaskRunner|Received shutdown signal
-2019-09-30 23:54:03.8076|INFO|Client.Client|Exitting...
-2019-09-30 23:54:03.8056|INFO|Client.TaskRunner.TaskRunner|Received shutdown signal
-2019-09-30 23:54:03.8056|INFO|Client.Client|Exitting...
+2019-09-30 23:57:57.2211|INFO|Client.Client|Client
+2019-09-30 23:58:05.9858|DEBUG|Client.ClientBase.Connector|Server responded.
+2019-09-30 23:58:05.9858|DEBUG|Client.ClientBase.Connector|Server accepted connection on port 3022. Id of client is 1.
+2019-09-30 23:58:05.9858|DEBUG|Client.ClientBase.Connector|Connecting to server on port 3022...
+2019-09-30 23:58:05.9908|DEBUG|Client.ClientBase.Connector|Sending connection response to server.
+2019-09-30 23:58:05.9908|INFO|Client.ClientBase.Connector|Connection established!
+2019-10-01 00:00:44.6828|ERROR|Client.Client|Nie mo¿na odczytaæ danych z po³¹czenia transportowego: Istniej¹ce po³¹czenie zosta³o gwa³townie zamkniête przez zdalnego hosta.
+2019-10-01 00:00:44.6828|INFO|Client.Client|Exitting...
