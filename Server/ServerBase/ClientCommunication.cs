@@ -38,6 +38,16 @@ namespace Server.ServerBase
             BinaryReaders = new ConcurrentDictionary<int, BinaryReader>();
         }
 
+        ~ClientCommunication()
+        {
+            Quit();
+        }
+
+        public void Quit()
+        {
+            _listener.StopListening();
+        }
+
         private void addClientCallback(int clientId, Client client)
         {
             do

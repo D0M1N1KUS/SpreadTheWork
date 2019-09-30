@@ -42,20 +42,12 @@ namespace Server
                 algorithm.Run(taskRunner);
                 
                 taskRunner.Finish();
+                clientCommunication.Quit();
             }
             catch (Exception e)
             {
                 Logger.Error(e);
             }
-//            Logger.Info("Starting test.");
-//            try
-//            {
-//                ObjectSendingTest.ObjectSendingTest.TryToSendObjects(clientCommunication);
-//            }
-//            catch (Exception e)
-//            {
-//                Logger.Error(e);
-//            }
             
             Logger.Info("Exitting...");
             Console.ReadLine();

@@ -22,6 +22,7 @@ namespace Server.TaskScheduling
         public ConcurrentDictionary<long, object> FinishedTasks { get; private set; }
 
         private ConcurrentQueue<Tuple<long, ISerializedData>> _requestsQueue;
+        private ConcurrentDictionary<int, bool> _clientIsBusyDictionary;
 
         private long taskId = 0;
 
@@ -33,21 +34,21 @@ namespace Server.TaskScheduling
             FinishedTasks = new ConcurrentDictionary<long, object>();
             _requestsQueue = new ConcurrentQueue<Tuple<long, ISerializedData>>();
             _serverThreads = new List<Thread>();
+            var clientIsBusyDictionary = new Dictionary<int, bool>();
             foreach (var client in _clientCommunication.ConnectedClients)
             {
                 var thread = new Thread(new ParameterizedThreadStart(serverThreadMethod));
                 thread.Start(client.Value);
                 _serverThreads.Add(thread);
+                clientIsBusyDictionary.Add(client.Key, false);
             }
+            
+            _clientIsBusyDictionary = new ConcurrentDictionary<int, bool>(clientIsBusyDictionary);
         }
 
         ~Scheduler()
         {
-            foreach (var thread in _serverThreads)
-            {
-                if(thread.IsAlive)
-                    thread.Abort();
-            }
+            Quit();
         }
 
         public long QueueTask(ISerializedData message)
@@ -60,6 +61,26 @@ namespace Server.TaskScheduling
         public bool QueueIsEmpty()
         {
             return _requestsQueue.IsEmpty;
+        }
+
+        public void Quit()
+        {
+            foreach (var thread in _serverThreads)
+            {
+                if(thread.IsAlive)
+                    thread.Abort();
+            }
+        }
+
+        public bool ClientsIdle()
+        {
+            foreach (var client in _clientIsBusyDictionary)
+            {
+                if (client.Value)
+                    return false;
+            }
+
+            return true;
         }
         
         private void serverThreadMethod(object obj)
@@ -75,6 +96,7 @@ namespace Server.TaskScheduling
                     Logger.Debug("Getting next task...");
                     if (_requestsQueue.TryDequeue(out var data))
                     {
+                        _clientIsBusyDictionary[client.Id] = true;
                         _clientCommunication
                             .Send(new Message() {DestinationClient = client.Id, SerializedData = data.Item2});
 
@@ -85,6 +107,13 @@ namespace Server.TaskScheduling
                         else
                             Logger.Error(response.Exception);
                     }
+                    _clientIsBusyDictionary[client.Id] = false;
+                }
+                catch (ThreadAbortException ta)
+                {
+                    Logger.Debug(ta);
+                    Logger.Info($"Exiting server thread for client {client.Id}...");
+                    return;
                 }
                 catch (Exception e)
                 {
