@@ -40,6 +40,8 @@ namespace Server
                 taskRunner.LoadAssembly(@"D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\SampleAssembly\bin\Debug\SampleAssembly.dll");
 
                 algorithm.Run(taskRunner);
+                
+                taskRunner.Finish();
             }
             catch (Exception e)
             {

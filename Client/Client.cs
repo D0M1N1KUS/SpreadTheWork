@@ -58,6 +58,9 @@ namespace Client
 //            {
 //                Logger.Error(e);
 //            }
+
+            Logger.Info("Exitting...");
+            Console.ReadLine();
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Client.TaskRunner
 
         private Assembly _targetAssembly;
 
-        private object calculationObject;
+        private object _calculationObject;
 
         public TaskRunner(ServerCommunication serverCommunication)
         {
@@ -58,7 +58,9 @@ namespace Client.TaskRunner
                     break;
                 case RunMethod runMethod:
                     Logger.Debug($"Running mehtod {runMethod.memberName}");
-                    _serverCommunication.Send(ObjectSerializer.Serialize(runMethodFromAssembly(runMethod)));
+                    _serverCommunication.Send(new MethodResponse(){
+                        Object = runMethodFromAssembly(runMethod)
+                    });
                     Logger.Info($"Done running method {runMethod.memberName}");
                     break;
                 case LoadAssembly loadAssembly:
@@ -83,18 +85,15 @@ namespace Client.TaskRunner
 
         private void instantiateObjectFromAssembly(Type type, object[] args)
         {
-            var typeFromAssembly =
-                _targetAssembly.GetType(_targetAssembly.GetName().Name + type.Name);
-            if (args != null)
-                calculationObject = Activator.CreateInstance(typeFromAssembly, args);
-            else
-                calculationObject = Activator.CreateInstance(typeFromAssembly);
+            _calculationObject = args != null 
+                ? Activator.CreateInstance(type, args)
+                : Activator.CreateInstance(type);
         }
 
         private object runMethodFromAssembly(RunMethod runMethod)
         {
             return runMethod.type.InvokeMember(runMethod.memberName, BindingFlags.InvokeMethod, null,
-                calculationObject, runMethod.args);
+                _calculationObject, runMethod.args);
         }
 
         private void loadAssemblyFromFile(LoadAssembly loadAssembly)

@@ -67,21 +67,28 @@ namespace Server.TaskScheduling
             var client = (Client)obj;
             while (true)
             {
-                while(_requestsQueue.IsEmpty)
-                    Thread.Sleep(10);
-                
-                Logger.Debug("Getting next task...");
-                if (_requestsQueue.TryDequeue(out var data))
+                try
                 {
-                    _clientCommunication
-                        .Send(new Message(){DestinationClient = client.Id, SerializedData = data.Item2});
+                    while (_requestsQueue.IsEmpty)
+                        Thread.Sleep(10);
 
-                    var serializedData = _clientCommunication.Receive(client.Id);
-                    var response = new RunMethodResponse();
-                    if(response.CheckResponse(ObjectSerializer.Deserialize(serializedData)))
-                        FinishedTasks.TryAdd(data.Item1, response.ResponseData);
-                    else
-                        Logger.Error(response.Exception);
+                    Logger.Debug("Getting next task...");
+                    if (_requestsQueue.TryDequeue(out var data))
+                    {
+                        _clientCommunication
+                            .Send(new Message() {DestinationClient = client.Id, SerializedData = data.Item2});
+
+                        var serializedData = _clientCommunication.Receive(client.Id);
+                        var response = new RunMethodResponse();
+                        if (response.CheckResponse(ObjectSerializer.Deserialize(serializedData)))
+                            FinishedTasks.TryAdd(data.Item1, response.ResponseData);
+                        else
+                            Logger.Error(response.Exception);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Logger.Error(e);
                 }
             }
         }

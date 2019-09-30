@@ -1,20 +1,58 @@
-2019-09-30 22:34:30.2920|INFO|Client.Client|Client
-2019-09-30 22:34:44.6369|DEBUG|Client.ClientBase.Connector|Server responded.
-2019-09-30 22:34:44.6369|DEBUG|Client.ClientBase.Connector|Server accepted connection on port 3022. Id of client is 1.
-2019-09-30 22:34:44.6369|DEBUG|Client.ClientBase.Connector|Connecting to server on port 3022...
-2019-09-30 22:34:44.6369|DEBUG|Client.ClientBase.Connector|Sending connection response to server.
-2019-09-30 22:34:44.6369|INFO|Client.ClientBase.Connector|Connection established!
-2019-09-30 22:34:44.6980|DEBUG|Client.ClientBase.ServerCommunication|Received 245 bytes.
-2019-09-30 22:34:44.6980|DEBUG|Client.TaskRunner.TaskRunner|Loading assembly D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\SampleAssembly\bin\Debug\SampleAssembly.dll
-2019-09-30 22:34:44.7090|DEBUG|Client.TaskRunner.TaskRunner|Done loading assembly!
-2019-09-30 22:34:44.7090|DEBUG|Client.ClientBase.ServerCommunication|Sent 252 bytes.
-2019-09-30 22:34:44.7240|DEBUG|Client.ClientBase.ServerCommunication|Received 360 bytes.
-2019-09-30 22:34:44.7240|DEBUG|Client.TaskRunner.TaskRunner|Instantiating object Sorter...
-2019-09-30 22:34:44.7240|ERROR|Client.TaskRunner.TaskRunner|System.ArgumentNullException: Wartoœæ nie mo¿e byæ zerowa.
-Nazwa parametru: type
-   w System.Activator.CreateInstance(Type type, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
-   w System.Activator.CreateInstance(Type type, Object[] args)
-   w Client.TaskRunner.TaskRunner.instantiateObjectFromAssembly(Type type, Object[] args) w D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\TaskRunner\TaskRunner.cs:wiersz 88
-   w Client.TaskRunner.TaskRunner.runTask(Object task) w D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\TaskRunner\TaskRunner.cs:wiersz 52
-   w Client.TaskRunner.TaskRunner.BeginReceivingTasks() w D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\Client\TaskRunner\TaskRunner.cs:wiersz 36
-2019-09-30 22:34:44.7460|DEBUG|Client.ClientBase.ServerCommunication|Sent 1579 bytes.
+2019-09-30 23:01:10.9542|INFO|Client.Client|Client
+2019-09-30 23:01:18.4861|DEBUG|Client.ClientBase.Connector|Server responded.
+2019-09-30 23:01:18.4861|DEBUG|Client.ClientBase.Connector|Server accepted connection on port 3022. Id of client is 1.
+2019-09-30 23:01:18.4901|DEBUG|Client.ClientBase.Connector|Connecting to server on port 3022...
+2019-09-30 23:01:18.4901|DEBUG|Client.ClientBase.Connector|Sending connection response to server.
+2019-09-30 23:01:18.4901|INFO|Client.ClientBase.Connector|Connection established!
+2019-09-30 23:01:18.5231|DEBUG|Client.ClientBase.ServerCommunication|Received 245 bytes.
+2019-09-30 23:01:18.5231|DEBUG|Client.TaskRunner.TaskRunner|Loading assembly D:\visual studio 2015\Projects\MyFreeTimeProjects\SpreadTheWork\SampleAssembly\bin\Debug\SampleAssembly.dll
+2019-09-30 23:01:18.5231|DEBUG|Client.TaskRunner.TaskRunner|Done loading assembly!
+2019-09-30 23:01:18.5231|DEBUG|Client.ClientBase.ServerCommunication|Sent 252 bytes.
+2019-09-30 23:01:18.5491|DEBUG|Client.ClientBase.ServerCommunication|Received 360 bytes.
+2019-09-30 23:01:18.5491|DEBUG|Client.TaskRunner.TaskRunner|Instantiating object Sorter...
+2019-09-30 23:01:18.5531|DEBUG|Client.TaskRunner.TaskRunner|Done instantiating!
+2019-09-30 23:01:18.5531|DEBUG|Client.ClientBase.ServerCommunication|Sent 204 bytes.
+2019-09-30 23:01:18.5722|DEBUG|Client.ClientBase.ServerCommunication|Received 649 bytes.
+2019-09-30 23:01:18.5722|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
+2019-09-30 23:01:18.5722|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
+2019-09-30 23:01:18.5722|DEBUG|Client.ClientBase.ServerCommunication|Sent 392 bytes.
+2019-09-30 23:01:18.5852|DEBUG|Client.ClientBase.ServerCommunication|Received 713 bytes.
+2019-09-30 23:01:18.5852|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
+2019-09-30 23:01:18.5852|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
+2019-09-30 23:01:18.5852|DEBUG|Client.ClientBase.ServerCommunication|Sent 456 bytes.
+2019-09-30 23:01:18.5852|DEBUG|Client.ClientBase.ServerCommunication|Received 713 bytes.
+2019-09-30 23:01:18.5852|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
+2019-09-30 23:01:18.6002|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
+2019-09-30 23:01:18.6002|DEBUG|Client.ClientBase.ServerCommunication|Sent 456 bytes.
+2019-09-30 23:01:18.6002|DEBUG|Client.ClientBase.ServerCommunication|Received 841 bytes.
+2019-09-30 23:01:18.6002|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
+2019-09-30 23:01:18.6002|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
+2019-09-30 23:01:18.6002|DEBUG|Client.ClientBase.ServerCommunication|Sent 584 bytes.
+2019-09-30 23:01:18.6002|DEBUG|Client.ClientBase.ServerCommunication|Received 841 bytes.
+2019-09-30 23:01:18.6162|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
+2019-09-30 23:01:18.6162|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
+2019-09-30 23:01:18.6162|DEBUG|Client.ClientBase.ServerCommunication|Sent 584 bytes.
+2019-09-30 23:01:18.6162|DEBUG|Client.ClientBase.ServerCommunication|Received 841 bytes.
+2019-09-30 23:01:18.6162|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
+2019-09-30 23:01:18.6162|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
+2019-09-30 23:01:18.6162|DEBUG|Client.ClientBase.ServerCommunication|Sent 584 bytes.
+2019-09-30 23:01:18.6312|DEBUG|Client.ClientBase.ServerCommunication|Received 841 bytes.
+2019-09-30 23:01:18.6312|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
+2019-09-30 23:01:18.6312|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
+2019-09-30 23:01:18.6312|DEBUG|Client.ClientBase.ServerCommunication|Sent 584 bytes.
+2019-09-30 23:01:18.6312|DEBUG|Client.ClientBase.ServerCommunication|Received 841 bytes.
+2019-09-30 23:01:18.6312|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
+2019-09-30 23:01:18.6312|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
+2019-09-30 23:01:18.6312|DEBUG|Client.ClientBase.ServerCommunication|Sent 584 bytes.
+2019-09-30 23:01:18.6552|DEBUG|Client.ClientBase.ServerCommunication|Received 841 bytes.
+2019-09-30 23:01:18.6552|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
+2019-09-30 23:01:18.6552|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
+2019-09-30 23:01:18.6552|DEBUG|Client.ClientBase.ServerCommunication|Sent 584 bytes.
+2019-09-30 23:01:18.6642|DEBUG|Client.ClientBase.ServerCommunication|Received 649 bytes.
+2019-09-30 23:01:18.6642|DEBUG|Client.TaskRunner.TaskRunner|Running mehtod BubbleSort
+2019-09-30 23:01:18.6642|INFO|Client.TaskRunner.TaskRunner|Done running method BubbleSort
+2019-09-30 23:01:18.6642|DEBUG|Client.ClientBase.ServerCommunication|Sent 392 bytes.
+2019-09-30 23:01:18.8203|DEBUG|Client.ClientBase.ServerCommunication|Received 122 bytes.
+2019-09-30 23:01:18.8203|INFO|Client.TaskRunner.TaskRunner|Received shutdown signal
+2019-09-30 23:01:18.8203|INFO|Client.Client|Exitting...
+2019-09-30 23:01:37.9976|INFO|Client.Client|Exitting...
